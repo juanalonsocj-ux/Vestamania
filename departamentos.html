@@ -1,0 +1,254 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Departamentos | Vestamania</title>
+
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Iconos -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css" rel="stylesheet">
+
+    <!-- CSS propio -->
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body class="admin-page">
+
+    <!-- BARRA SUPERIOR -->
+    <nav class="navbar admin-navbar">
+        <div class="container-fluid px-4">
+
+            <a href="admin.html" class="navbar-brand d-flex align-items-center gap-2">
+                <span class="logo-icon">
+                    <i class="bi bi-layers"></i>
+                </span>
+                <span class="fw-bold">VESTAMANIA</span>
+            </a>
+
+            <div class="d-flex align-items-center gap-3">
+                <span class="admin-role d-none d-sm-inline">
+                    Administrador
+                </span>
+
+                <a href="login.html" class="btn btn-outline-light btn-sm">
+                    <i class="bi bi-box-arrow-right me-1"></i>
+                    Salir
+                </a>
+            </div>
+
+        </div>
+    </nav>
+
+    <div class="container-fluid">
+        <div class="row">
+
+            <!-- MENÚ LATERAL -->
+            <aside class="col-lg-3 col-xl-2 admin-sidebar p-4">
+
+                <p class="sidebar-label mb-4">
+                    MENÚ PRINCIPAL
+                </p>
+
+                <nav class="nav flex-column gap-2">
+
+                    <a class="nav-link" href="admin.html">
+                        <i class="bi bi-grid-1x2 me-2"></i>
+                        Inicio
+                    </a>
+
+                    <a class="nav-link active" href="departamentos.html"
+                       aria-current="page">
+                        <i class="bi bi-building me-2"></i>
+                        Departamentos
+                    </a>
+
+                    <a class="nav-link" href="empleados.html">
+                        <i class="bi bi-people me-2"></i>
+                        Empleados
+                    </a>
+
+                    <a class="nav-link" href="tareas.html">
+                        <i class="bi bi-clipboard-check me-2"></i>
+                        Tareas
+                    </a>
+
+                    <a class="nav-link" href="mensajes-admin.html">
+                        <i class="bi bi-chat-dots me-2"></i>
+                        Mensajes
+                    </a>
+
+                </nav>
+
+            </aside>
+
+            <!-- CONTENIDO PRINCIPAL -->
+            <main class="col-lg-9 col-xl-10 admin-main p-4 p-lg-5">
+
+                <div class="d-flex flex-wrap justify-content-between align-items-center gap-3 mb-4">
+
+                    <div>
+                        <p class="admin-eyebrow mb-2">
+                            GESTIÓN DE LA EMPRESA
+                        </p>
+
+                        <h1 class="fw-bold mb-2">
+                            Departamentos
+                        </h1>
+
+                        <p class="admin-muted mb-0">
+                            Organiza y administra los departamentos de tu empresa.
+                        </p>
+                    </div>
+
+                    <!-- BOTÓN QUE ABRE EL MODAL -->
+                    <button class="btn btn-cobre"
+                            type="button"
+                            data-bs-toggle="modal"
+                            data-bs-target="#modalDepartamento">
+
+                        <i class="bi bi-plus-lg me-2"></i>
+                        Nuevo departamento
+                    </button>
+
+                </div>
+
+                <!-- LISTADO -->
+                <section class="admin-panel-box">
+
+                    <div class="d-flex flex-wrap justify-content-between align-items-center gap-3 mb-4">
+
+                        <h2 class="h5 fw-bold mb-0">
+                            Listado de departamentos
+                        </h2>
+
+                        <div class="input-group" style="max-width: 300px;">
+                            <span class="input-group-text">
+                                <i class="bi bi-search"></i>
+                            </span>
+
+                            <input type="search"
+                                   id="buscarDepartamento"
+                                   class="form-control"
+                                   placeholder="Buscar departamento..."
+                                   aria-label="Buscar departamento">
+                        </div>
+
+                    </div>
+
+                    <div class="table-responsive">
+                        <table class="table table-hover align-middle tabla-vestamania">
+
+                            <thead>
+                                <tr>
+                                    <th>Departamento</th>
+                                    <th>Descripción</th>
+                                    <th class="text-end">Acciones</th>
+                                </tr>
+                            </thead>
+
+                            <tbody id="tablaDepartamentos">
+                                <!-- JavaScript añadirá las filas -->
+                            </tbody>
+
+                        </table>
+                    </div>
+
+                    <p id="mensajeVacio"
+                       class="admin-muted text-center py-3 d-none">
+                        No hay departamentos para mostrar.
+                    </p>
+
+                    <p class="small admin-muted mb-0">
+                        Prototipo frontend: los cambios todavía no se guardan
+                        en la base de datos.
+                    </p>
+
+                </section>
+
+            </main>
+
+        </div>
+    </div>
+
+    <!-- MODAL DE BOOTSTRAP -->
+    <div class="modal fade" id="modalDepartamento"
+         tabindex="-1"
+         aria-labelledby="tituloModalDepartamento"
+         aria-hidden="true">
+
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content modal-vestamania">
+
+                <div class="modal-header">
+                    <h2 class="modal-title fs-5" id="tituloModalDepartamento">
+                        Nuevo departamento
+                    </h2>
+
+                    <button type="button"
+                            class="btn-close"
+                            data-bs-dismiss="modal"
+                            aria-label="Cerrar">
+                    </button>
+                </div>
+
+                <form id="formDepartamento">
+
+                    <div class="modal-body">
+
+                        <input type="hidden" id="departamentoId">
+
+                        <div class="mb-3">
+                            <label for="nombreDepartamento" class="form-label">
+                                Nombre del departamento
+                            </label>
+
+                            <input type="text"
+                                   class="form-control"
+                                   id="nombreDepartamento"
+                                   maxlength="60"
+                                   required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="descripcionDepartamento" class="form-label">
+                                Descripción
+                            </label>
+
+                            <textarea class="form-control"
+                                      id="descripcionDepartamento"
+                                      rows="3"
+                                      maxlength="250"></textarea>
+                        </div>
+
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="button"
+                                class="btn btn-outline-secondary"
+                                data-bs-dismiss="modal">
+                            Cancelar
+                        </button>
+
+                        <button type="submit" class="btn btn-vestamania">
+                            Guardar departamento
+                        </button>
+                    </div>
+
+                </form>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script src="../js/main.js"></script>
+   
+
+</body>
+</html>

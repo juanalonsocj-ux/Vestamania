@@ -1,0 +1,149 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Mis mensajes | Vestamania</title>
+
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+          rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
+          rel="stylesheet">
+
+    <!-- CSS de Vestamania -->
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body class="mensajes-page">
+
+    <!-- BARRA SUPERIOR -->
+    <nav class="navbar mensajes-navbar">
+        <div class="container">
+
+            <a href="empleado.html"
+               class="navbar-brand d-flex align-items-center gap-2">
+
+                <span class="logo-icon">
+                    <i class="bi bi-layers"></i>
+                </span>
+
+                <span class="fw-bold">VESTAMANIA</span>
+            </a>
+
+            <a href="empleado.html"
+               class="btn btn-outline-light btn-sm">
+
+                <i class="bi bi-arrow-left me-2"></i>
+                Volver al panel
+            </a>
+
+        </div>
+    </nav>
+
+    <!-- CONTENIDO -->
+    <main class="container py-5">
+
+        <div class="mb-4">
+            <p class="admin-eyebrow mb-2">
+                COMUNICACIÓN INTERNA
+            </p>
+
+            <h1 class="fw-bold chat-titulo-pagina">
+                Mis mensajes
+            </h1>
+
+            <p class="admin-muted">
+                Habla directamente con el administrador.
+            </p>
+        </div>
+
+        <!-- CHAT PRIVADO -->
+        <section class="chat-privado">
+
+            <!-- CABECERA -->
+            <div class="chat-privado-cabecera">
+
+                <span class="chat-avatar">
+                    <i class="bi bi-person-badge"></i>
+                </span>
+
+                <div>
+                    <h2 class="h5 fw-bold mb-1">
+                        Administrador
+                    </h2>
+
+                    <p class="small admin-muted mb-0">
+                        Conversación privada
+                    </p>
+                </div>
+
+            </div>
+
+            <!-- CONTENEDOR DE MENSAJES -->
+            <div class="chat-privado-mensajes"
+                 id="listaMensajes"
+                 aria-live="polite">
+
+                <!--
+                  Laravel cargará aquí únicamente
+                  los mensajes del usuario autenticado
+                  y su administrador.
+                -->
+
+                <div class="chat-sin-mensajes">
+
+                    <i class="bi bi-chat-square-dots"></i>
+
+                    <h3 class="h6 fw-bold mt-3">
+                        Todavía no hay mensajes
+                    </h3>
+
+                    <p class="mb-0">
+                        Aquí aparecerá tu conversación
+                        con el administrador.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <!-- CAMPO PARA ESCRIBIR -->
+            <div class="chat-privado-pie">
+
+                <form id="formMensaje"
+                      class="d-flex align-items-center gap-2">
+
+                    <label for="mensaje"
+                           class="visually-hidden">
+                        Escribir mensaje
+                    </label>
+
+                    <input type="text"
+                           id="mensaje"
+                           name="mensaje"
+                           class="form-control"
+                           placeholder="Escribe un mensaje..."
+                           autocomplete="off">
+
+                    <button type="button"
+                            class="btn btn-cobre chat-boton-enviar"
+                            aria-label="Enviar mensaje">
+
+                        <i class="bi bi-send"></i>
+                    </button>
+
+                </form>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</body>
+</html>

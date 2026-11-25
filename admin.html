@@ -1,0 +1,187 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel de administración | Vestamania</title>
+
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Iconos Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css" rel="stylesheet">
+
+    <!-- CSS personalizado (un nivel por encima) -->
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body class="admin-page">
+
+    <!-- BARRA SUPERIOR -->
+    <nav class="navbar navbar-expand-lg admin-navbar">
+        <div class="container-fluid px-4">
+
+            <a href="admin.html" class="navbar-brand d-flex align-items-center gap-2">
+                <span class="logo-icon">
+                    <i class="bi bi-layers"></i>
+                </span>
+                <span class="fw-bold">VESTAMANIA</span>
+            </a>
+
+            <div class="d-flex align-items-center gap-3">
+                <span class="admin-role d-none d-sm-inline">
+                    Administrador
+                </span>
+
+                <button class="btn admin-icon-btn" type="button"
+                        aria-label="Notificaciones">
+                    <i class="bi bi-bell"></i>
+                </button>
+
+                <a href="login.html" class="btn btn-outline-light btn-sm">
+                    <i class="bi bi-box-arrow-right me-1"></i>
+                    Salir
+                </a>
+            </div>
+
+        </div>
+    </nav>
+
+    <!-- DISTRIBUCIÓN PRINCIPAL -->
+    <div class="container-fluid">
+        <div class="row">
+
+            <!-- MENÚ LATERAL -->
+            <aside class="col-lg-3 col-xl-2 admin-sidebar p-4">
+
+                <p class="sidebar-label mb-4">
+                    MENÚ PRINCIPAL
+                </p>
+
+                <nav class="nav flex-column gap-2">
+
+                    <a class="nav-link active" href="admin.html">
+                        <i class="bi bi-grid-1x2 me-2"></i>
+                        Inicio
+                    </a>
+
+                    <a class="nav-link" href="departamentos.html">
+                        <i class="bi bi-building me-2"></i>
+                        Departamentos
+                    </a>
+
+                    <a class="nav-link" href="empleados.html">
+                        <i class="bi bi-people me-2"></i>
+                        Empleados
+                    </a>
+
+                    <a class="nav-link" href="tareas.html">
+                        <i class="bi bi-clipboard-check me-2"></i>
+                        Tareas
+                    </a>
+
+                    <a class="nav-link" href="mensajes-admin.html">
+                        <i class="bi bi-chat-dots me-2"></i>
+                        Mensajes
+                    </a>
+
+                </nav>
+            </aside>
+
+            <!-- CONTENIDO -->
+            <main class="col-lg-9 col-xl-10 admin-main p-4 p-lg-5">
+
+                <div class="mb-5">
+                    <p class="admin-eyebrow mb-2">
+                        VISTA GENERAL
+                    </p>
+
+                    <h1 class="fw-bold">
+                        Panel de administración
+                    </h1>
+
+                    <p class="admin-muted">
+                        Bienvenido al espacio de gestión de Vestamania.
+                    </p>
+                </div>
+
+                <!-- TARJETAS RESUMEN -->
+                <div class="row g-4 mb-5">
+
+                    <div class="col-md-6 col-xl-3">
+                        <div class="admin-stat-card">
+                            <i class="bi bi-building"></i>
+                            <p>Departamentos</p>
+                            <h2>—</h2>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-xl-3">
+                        <div class="admin-stat-card">
+                            <i class="bi bi-people"></i>
+                            <p>Empleados</p>
+                            <h2>—</h2>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-xl-3">
+                        <div class="admin-stat-card">
+                            <i class="bi bi-clipboard-check"></i>
+                            <p>Tareas activas</p>
+                            <h2>—</h2>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-xl-3">
+                        <div class="admin-stat-card">
+                            <i class="bi bi-chat-dots"></i>
+                            <p>Mensajes</p>
+                            <h2>—</h2>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- ACCESOS RÁPIDOS -->
+                <section class="admin-panel-box">
+
+                    <h2 class="h5 fw-bold mb-3">
+                        Accesos rápidos
+                    </h2>
+
+                    <p class="admin-muted mb-4">
+                        Accede a las funciones principales de gestión.
+                    </p>
+
+                    <div class="d-flex flex-wrap gap-3">
+
+                        <a href="empleados.html" class="btn btn-cobre">
+                            <i class="bi bi-person-plus me-2"></i>
+                            Añadir empleado
+                        </a>
+
+                        <a href="tareas.html" class="btn btn-vestamania">
+                            <i class="bi bi-plus-circle me-2"></i>
+                            Crear tarea
+                        </a>
+
+                    </div>
+
+                </section>
+
+                <p class="small admin-muted mt-4">
+                    Panel de demostración. Los datos se cargarán
+                    cuando se conecte el backend.
+                </p>
+
+            </main>
+
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../js/main.js"></script>
+
+</body>
+</html>
