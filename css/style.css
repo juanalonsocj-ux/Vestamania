@@ -1,0 +1,1340 @@
+
+/* =====================================
+   VESTAMANIA - ESTILOS GENERALES
+   ===================================== */
+
+:root {
+    --petroleo: #173F43;
+    --verde: #39746E;
+    --cobre: #B87955;
+    --arena: #E8DDCA;
+    --crema: #F5F0E7;
+    --texto-secundario: #566B65;
+}
+
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    background-color: var(--crema);
+    color: var(--petroleo);
+}
+
+/* =====================================
+   BARRA DE NAVEGACION
+   ===================================== */
+
+.navbar {
+    background-color: var(--petroleo) !important;
+    border-bottom: none !important;
+}
+
+.navbar-brand,
+.navbar-brand:hover {
+    color: var(--crema);
+    letter-spacing: 1px;
+}
+
+.logo-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 38px;
+    height: 38px;
+    border-radius: 8px;
+    background-color: var(--verde);
+    color: var(--crema);
+    font-size: 20px;
+}
+
+/* Enlace de volver al inicio del login */
+
+.navbar a.text-secondary {
+    color: var(--crema) !important;
+}
+
+.navbar a.text-secondary:hover {
+    color: var(--cobre) !important;
+}
+
+/* =====================================
+   BOTONES PERSONALIZADOS
+   ===================================== */
+
+.btn-vestamania {
+    background-color: var(--petroleo);
+    color: var(--crema);
+    border: 1px solid var(--petroleo);
+    border-radius: 8px;
+    padding: 10px 22px;
+    font-weight: 600;
+    transition: all 0.2s ease;
+}
+
+.btn-vestamania:hover {
+    background-color: var(--verde);
+    border-color: var(--verde);
+    color: var(--crema);
+}
+
+.navbar .btn-vestamania {
+    background-color: #75958A;
+    border-color: #75958A;
+    color: #173F43;
+}
+
+.navbar .btn-vestamania:hover {
+    background-color: #5F7E74;
+    border-color: #5F7E74;
+    color: #FFFFFF;
+}
+
+/* =====================================
+   INDEX - PAGINA PRINCIPAL
+   ===================================== */
+
+.hero {
+    background-color: var(--crema);
+    padding: 110px 0 100px;
+}
+
+.hero-label {
+    color: var(--verde);
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.hero-title {
+    color: var(--petroleo);
+    font-size: clamp(36px, 5vw, 60px);
+    font-weight: 700;
+    line-height: 1.15;
+    letter-spacing: -1.5px;
+}
+
+.hero-description {
+    max-width: 580px;
+    color: var(--texto-secundario);
+    font-size: 18px;
+    line-height: 1.7;
+}
+
+/* Tarjetas de departamentos, empleados y tareas */
+
+.feature-card {
+    background-color: var(--arena);
+    color: var(--petroleo);
+    border-radius: 14px;
+    padding: 35px 20px;
+    transition: transform 0.2s ease,
+                box-shadow 0.2s ease;
+}
+
+.feature-card i {
+    color: var(--verde);
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(23, 63, 67, 0.12);
+}
+
+.feature-card h3 {
+    font-size: 18px;
+    font-weight: 600;
+    margin-top: 16px;
+    margin-bottom: 0;
+}
+
+/* =====================================
+   LOGIN - INICIO DE SESION
+   ===================================== */
+
+.login-page {
+    background-color: var(--crema);
+    min-height: 100vh;
+}
+
+.login-content {
+    min-height: calc(100vh - 75px);
+    padding-top: 35px;
+    padding-bottom: 35px;
+}
+
+.login-card {
+    background-color: #FFFDF9;
+    border: 1px solid var(--arena);
+    border-radius: 16px;
+}
+
+.login-card h1 {
+    color: var(--petroleo);
+}
+
+.login-card .text-secondary {
+    color: var(--texto-secundario) !important;
+}
+
+.login-card .form-label {
+    color: var(--petroleo);
+    font-weight: 500;
+}
+
+.login-card .form-control {
+    padding: 12px;
+    border-color: #C9C4B8;
+}
+
+.login-card .form-control:focus {
+    border-color: var(--verde);
+    box-shadow: 0 0 0 0.2rem rgba(57, 116, 110, 0.15);
+}
+
+.login-card .btn-vestamania {
+    padding: 12px;
+}
+
+.login-card .btn-outline-secondary {
+    border-color: #C9C4B8;
+    color: var(--verde);
+}
+
+.login-card .btn-outline-secondary:hover {
+    background-color: var(--arena);
+    color: var(--petroleo);
+}
+
+/* =====================================
+   PANEL DEL ADMINISTRADOR
+   ===================================== */
+
+.admin-page {
+    background-color: var(--crema);
+}
+
+.admin-navbar {
+    background-color: var(--petroleo);
+    min-height: 76px;
+}
+
+.admin-role {
+    color: var(--arena);
+    font-size: 14px;
+}
+
+.admin-icon-btn {
+    color: var(--crema);
+    font-size: 20px;
+    border: none;
+}
+
+.admin-icon-btn:hover {
+    color: var(--cobre);
+}
+
+.admin-sidebar {
+    background-color: var(--arena);
+    min-height: calc(100vh - 76px);
+}
+
+.sidebar-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: var(--texto-secundario);
+}
+
+.admin-sidebar .nav-link {
+    color: var(--petroleo);
+    padding: 13px 15px;
+    border-radius: 9px;
+    font-weight: 500;
+    transition: background-color 0.2s;
+}
+
+.admin-sidebar .nav-link:hover {
+    background-color: rgba(57, 116, 110, 0.12);
+}
+
+.admin-sidebar .nav-link.active {
+    background-color: var(--petroleo);
+    color: var(--crema);
+}
+
+.admin-main {
+    min-height: calc(100vh - 76px);
+}
+
+.admin-main h1 {
+    color: var(--petroleo);
+}
+
+.admin-eyebrow {
+    color: var(--verde);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.admin-muted {
+    color: var(--texto-secundario);
+}
+
+/* Tarjetas de estadísticas */
+
+.admin-stat-card {
+    background-color: #FFFDF9;
+    border: 1px solid var(--arena);
+    border-radius: 14px;
+    padding: 25px;
+    height: 100%;
+}
+
+.admin-stat-card i {
+    color: var(--verde);
+    font-size: 28px;
+}
+
+.admin-stat-card p {
+    margin: 16px 0 8px;
+    color: var(--texto-secundario);
+    font-size: 14px;
+}
+
+.admin-stat-card h2 {
+    color: var(--petroleo);
+    font-size: 28px;
+    font-weight: 700;
+    margin: 0;
+}
+
+/* Caja de accesos rápidos */
+
+.admin-panel-box {
+    background-color: #FFFDF9;
+    border: 1px solid var(--arena);
+    border-radius: 14px;
+    padding: 30px;
+}
+
+.btn-cobre {
+    background-color: var(--cobre);
+    border: 1px solid var(--cobre);
+    color: var(--petroleo);
+    border-radius: 8px;
+    padding: 10px 20px;
+    font-weight: 600;
+}
+
+.btn-cobre:hover {
+    background-color: var(--arena);
+    border-color: var(--arena);
+    color: var(--petroleo);
+}
+
+/* Adaptación a pantallas pequeñas */
+
+@media (max-width: 991px) {
+    .admin-sidebar {
+        min-height: auto;
+    }
+
+    .admin-main {
+        min-height: auto;
+    }
+}
+
+
+/* =====================================
+   GESTIÓN DE DEPARTAMENTOS
+   ===================================== */
+
+.tabla-vestamania {
+    --bs-table-bg: transparent;
+    --bs-table-hover-bg: #F5F0E7;
+}
+
+.tabla-vestamania thead th {
+    color: var(--petroleo);
+    font-size: 14px;
+    border-bottom: 2px solid var(--arena);
+    padding: 15px 12px;
+}
+
+.tabla-vestamania tbody td {
+    padding: 16px 12px;
+    color: var(--texto-secundario);
+    border-bottom-color: var(--arena);
+}
+
+.btn-accion {
+    border: none;
+    background: transparent;
+    font-size: 18px;
+    padding: 5px 9px;
+}
+
+.btn-editar {
+    color: var(--verde);
+}
+
+.btn-eliminar {
+    color: #A65C48;
+}
+
+.btn-accion:hover {
+    background-color: var(--crema);
+    border-radius: 6px;
+}
+
+.modal-vestamania {
+    background-color: #FFFDF9;
+    border: none;
+    border-radius: 14px;
+}
+
+.modal-vestamania .modal-header,
+.modal-vestamania .modal-footer {
+    border-color: var(--arena);
+}
+
+.modal-vestamania .modal-title {
+    color: var(--petroleo);
+    font-weight: 700;
+}
+
+/* =====================================
+   PAGINA DE EMPLEADOS
+   ===================================== */
+
+/* Etiqueta de empleado activo */
+
+.badge-activo {
+    background-color: #DDECE4;
+    color: #27654C;
+    padding: 7px 12px;
+    font-weight: 600;
+    border-radius: 20px;
+}
+
+/* Etiqueta de empleado inactivo */
+
+.badge-inactivo {
+    background-color: #F1DDD2;
+    color: #94563D;
+    padding: 7px 12px;
+    font-weight: 600;
+    border-radius: 20px;
+}
+
+/* Campos del formulario */
+
+.modal-vestamania .form-control,
+.modal-vestamania .form-select {
+    border: 1px solid #C9C4B8;
+    border-radius: 8px;
+    padding: 11px 12px;
+}
+
+.modal-vestamania .form-control:focus,
+.modal-vestamania .form-select:focus {
+    border-color: var(--verde);
+    box-shadow: 0 0 0 0.2rem rgba(57, 116, 110, 0.15);
+}
+
+/* Buscador */
+
+.admin-panel-box .input-group-text {
+    background-color: var(--arena);
+    border-color: #C9C4B8;
+    color: var(--petroleo);
+}
+
+
+
+/* =====================================
+   GESTIÓN DE TAREAS - VESTAMANIA
+   ===================================== */
+
+/* Tarjetas de resumen */
+
+.tarea-resumen {
+    background-color: #FFFDF9;
+    border: 1px solid var(--arena);
+    border-radius: 14px;
+    padding: 25px;
+    height: 100%;
+}
+
+.tarea-resumen-icon {
+    width: 45px;
+    height: 45px;
+    background-color: var(--arena);
+    color: var(--verde);
+    border-radius: 10px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 22px;
+}
+
+.tarea-resumen p {
+    margin-top: 18px;
+    margin-bottom: 5px;
+    color: var(--texto-secundario);
+    font-size: 14px;
+}
+
+.tarea-resumen h2 {
+    color: var(--petroleo);
+    font-size: 30px;
+    font-weight: 700;
+    margin-bottom: 0;
+}
+
+/* Estados de las tareas */
+
+.estado-pendiente {
+    background-color: #F4E3D8;
+    color: #865137;
+}
+
+.estado-curso {
+    background-color: #DCEBE7;
+    color: #265F5B;
+}
+
+.estado-finalizada {
+    background-color: #E2ECDD;
+    color: #386444;
+}
+
+.estado-pendiente,
+.estado-curso,
+.estado-finalizada {
+    padding: 8px 12px;
+    border-radius: 20px;
+    font-weight: 600;
+}
+
+/* Prioridad */
+
+.prioridad-alta {
+    color: #A34B3F;
+    font-weight: 600;
+}
+
+.prioridad-media {
+    color: #9B6B37;
+    font-weight: 600;
+}
+
+.prioridad-baja {
+    color: #39746E;
+    font-weight: 600;
+}
+
+/* Filtros */
+
+.admin-panel-box .form-select,
+.admin-panel-box .form-control {
+    border-color: #C9C4B8;
+    border-radius: 8px;
+    color: var(--petroleo);
+}
+
+.admin-panel-box .form-select:focus,
+.admin-panel-box .form-control:focus {
+    border-color: var(--verde);
+    box-shadow: 0 0 0 0.2rem rgba(57, 116, 110, 0.15);
+}
+
+
+
+
+/* =====================================
+   PANEL DEL EMPLEADO - VESTAMANIA
+   ===================================== */
+
+.empleado-page {
+    background-color: var(--crema);
+    min-height: 100vh;
+}
+
+/* Barra superior */
+
+.empleado-navbar {
+    background-color: var(--petroleo);
+    min-height: 76px;
+}
+
+.empleado-rol {
+    color: var(--arena);
+    font-size: 14px;
+}
+
+.empleado-notificacion {
+    color: var(--crema);
+    border: none;
+    font-size: 20px;
+}
+
+.empleado-notificacion:hover {
+    color: var(--cobre);
+}
+
+/* Contenido principal */
+
+.empleado-main {
+    max-width: 1050px;
+    padding-top: 65px;
+    padding-bottom: 65px;
+}
+
+.empleado-main h1 {
+    color: var(--petroleo);
+    font-size: clamp(28px, 4vw, 40px);
+}
+
+/* Tarjeta de tarea actual */
+
+.tarea-actual {
+    background-color: #FFFDF9;
+    border: 1px solid var(--arena);
+    border-radius: 16px;
+    padding: 35px;
+    box-shadow: 0 6px 20px rgba(23, 63, 67, 0.06);
+}
+
+.tarea-actual h2 {
+    color: var(--petroleo);
+}
+
+.tarea-actual h2 i {
+    color: var(--verde);
+}
+
+.tarea-titulo {
+    color: var(--petroleo);
+    font-size: 26px;
+    font-weight: 700;
+}
+
+/* Información de la tarea */
+
+.tarea-detalles {
+    background-color: var(--crema);
+    border-radius: 10px;
+    padding: 18px;
+    color: var(--texto-secundario);
+}
+
+.tarea-detalles i {
+    color: var(--verde);
+}
+
+/* Botones */
+
+.empleado-btn-tarea {
+    padding: 14px 18px;
+    font-size: 15px;
+}
+
+.btn-verde {
+    background-color: var(--verde);
+    color: var(--crema);
+    border: 1px solid var(--verde);
+    border-radius: 8px;
+    padding: 11px 20px;
+    font-weight: 600;
+}
+
+.btn-verde:hover {
+    background-color: var(--petroleo);
+    border-color: var(--petroleo);
+    color: var(--crema);
+}
+
+/* Comunicación interna */
+
+.empleado-comunicacion {
+    background-color: var(--arena);
+    border-radius: 14px;
+    padding: 30px;
+}
+
+.empleado-comunicacion h2 {
+    color: var(--petroleo);
+}
+
+.empleado-comunicacion h2 i {
+    color: var(--verde);
+}
+
+.empleado-comunicacion p {
+    color: var(--texto-secundario);
+    line-height: 1.7;
+}
+
+/* Adaptación a móviles */
+
+@media (max-width: 768px) {
+
+    .empleado-main {
+        padding-top: 40px;
+        padding-bottom: 40px;
+    }
+
+    .tarea-actual {
+        padding: 25px 20px;
+    }
+
+    .tarea-titulo {
+        font-size: 22px;
+    }
+
+    .empleado-comunicacion {
+        padding: 25px 20px;
+    }
+
+    .empleado-comunicacion .btn-verde {
+        width: 100%;
+    }
+
+}
+
+/* =====================================
+   MENSAJERÍA - VESTAMANIA
+   ===================================== */
+
+/* Página */
+
+.mensajes-page {
+    background-color: var(--crema);
+    min-height: 100vh;
+}
+
+.mensajes-navbar {
+    background-color: var(--petroleo);
+    min-height: 76px;
+}
+
+.mensajes-main {
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+.mensajes-main h1 {
+    color: var(--petroleo);
+}
+
+/* Contenedor general del chat */
+
+.mensajes-contenedor {
+    background-color: #FFFDF9;
+    border: 1px solid var(--arena);
+    border-radius: 16px;
+    overflow: hidden;
+    min-height: 610px;
+}
+
+/* Columna de conversaciones */
+
+.mensajes-sidebar {
+    background-color: var(--arena);
+    border-right: 1px solid #D3C6B4;
+}
+
+.mensajes-sidebar h2 {
+    color: var(--petroleo);
+}
+
+.mensajes-seccion {
+    color: var(--texto-secundario);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+}
+
+.mensajes-sidebar .input-group-text {
+    background-color: #FFFDF9;
+    border-color: #C9C4B8;
+    color: var(--verde);
+}
+
+.mensajes-sidebar .form-control {
+    border-color: #C9C4B8;
+}
+
+/* Elementos de conversación */
+
+.conversacion-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 13px;
+    border-radius: 10px;
+    text-decoration: none;
+    color: var(--petroleo);
+    transition: background-color 0.2s;
+}
+
+.conversacion-item:hover {
+    background-color: #D8CBB8;
+    color: var(--petroleo);
+}
+
+.conversacion-item.seleccionado {
+    background-color: var(--petroleo);
+    color: var(--crema);
+}
+
+.conversacion-item strong {
+    display: block;
+    font-size: 14px;
+}
+
+.conversacion-item small {
+    display: block;
+    font-size: 12px;
+    opacity: 0.75;
+}
+
+.conversacion-icono,
+.conversacion-avatar {
+    width: 42px;
+    height: 42px;
+    flex-shrink: 0;
+    border-radius: 10px;
+    background-color: #DCEBE7;
+    color: var(--verde);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 18px;
+}
+
+.conversacion-avatar {
+    border-radius: 50%;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.conversacion-item.seleccionado .conversacion-icono {
+    background-color: var(--verde);
+    color: var(--crema);
+}
+
+/* Zona del chat */
+
+.mensajes-chat {
+    display: flex;
+    flex-direction: column;
+    min-height: 610px;
+    background-color: #FFFDF9;
+}
+
+/* Cabecera */
+
+.chat-cabecera {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+
+    padding: 20px 25px;
+    border-bottom: 1px solid var(--arena);
+}
+
+.chat-cabecera h2 {
+    color: var(--petroleo);
+}
+
+.chat-icono {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 45px;
+    height: 45px;
+    border-radius: 10px;
+
+    background-color: #DCEBE7;
+    color: var(--verde);
+    font-size: 22px;
+}
+
+.chat-tipo {
+    background-color: var(--arena);
+    color: var(--petroleo);
+    padding: 8px 12px;
+}
+
+/* Área de mensajes */
+
+.chat-mensajes {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    flex: 1;
+
+    padding: 30px;
+    background-color: #F9F6F0;
+}
+
+.chat-fecha {
+    align-self: center;
+    background-color: var(--arena);
+    color: var(--texto-secundario);
+
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 12px;
+    margin-bottom: 8px;
+}
+
+/* Mensajes recibidos */
+
+.mensaje-recibido {
+    align-self: flex-start;
+    max-width: 75%;
+
+    padding: 14px 18px;
+    background-color: #FFFFFF;
+    border: 1px solid var(--arena);
+    border-radius: 14px 14px 14px 4px;
+
+    color: var(--petroleo);
+    font-size: 14px;
+}
+
+.mensaje-autor {
+    display: block;
+    color: var(--verde);
+    font-weight: 700;
+    font-size: 12px;
+    margin-bottom: 7px;
+}
+
+/* Mensajes enviados */
+
+.mensaje-enviado {
+    align-self: flex-end;
+    max-width: 75%;
+
+    padding: 14px 18px;
+    background-color: #DCEBE7;
+    border-radius: 14px 14px 4px 14px;
+
+    color: var(--petroleo);
+    font-size: 14px;
+}
+
+.mensaje-hora {
+    display: block;
+    color: var(--texto-secundario);
+    font-size: 11px;
+    text-align: right;
+    margin-top: 5px;
+}
+
+/* Zona para escribir */
+
+.chat-escribir {
+    background-color: #FFFDF9;
+    border-top: 1px solid var(--arena);
+    padding: 20px 25px;
+}
+
+.chat-escribir .form-control {
+    padding: 13px 15px;
+    border-color: #C9C4B8;
+    border-radius: 9px;
+}
+
+.chat-escribir .form-control:focus {
+    border-color: var(--verde);
+    box-shadow: 0 0 0 0.2rem rgba(57, 116, 110, 0.15);
+}
+
+.chat-btn-enviar {
+    min-width: 48px;
+    height: 48px;
+    font-size: 18px;
+}
+
+/* Adaptación a móviles */
+
+@media (max-width: 767px) {
+
+    .mensajes-sidebar {
+        border-right: none;
+        border-bottom: 1px solid #D3C6B4;
+    }
+
+    .mensajes-chat {
+        min-height: 480px;
+    }
+
+    .chat-cabecera,
+    .chat-escribir {
+        padding: 16px;
+    }
+
+    .chat-mensajes {
+        padding: 18px;
+    }
+
+    .mensaje-recibido,
+    .mensaje-enviado {
+        max-width: 90%;
+    }
+}
+
+
+/* =====================================
+   CHAT PRIVADO - VESTAMANIA
+   ===================================== */
+
+.chat-titulo-pagina {
+    color: var(--petroleo);
+}
+
+/* Ventana principal del empleado */
+
+.chat-privado {
+    max-width: 950px;
+    margin: 0 auto;
+    background-color: #FFFDF9;
+    border: 1px solid var(--arena);
+    border-radius: 16px;
+    overflow: hidden;
+}
+
+/* Cabecera de conversación */
+
+.chat-privado-cabecera {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 20px 25px;
+    background-color: #FFFDF9;
+    border-bottom: 1px solid var(--arena);
+}
+
+.chat-privado-cabecera h2 {
+    color: var(--petroleo);
+}
+
+.chat-avatar {
+    width: 48px;
+    height: 48px;
+    flex-shrink: 0;
+    border-radius: 50%;
+    background-color: #DCEBE7;
+    color: var(--verde);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 24px;
+}
+
+/* Zona donde aparecerán los mensajes */
+
+.chat-privado-mensajes {
+    min-height: 430px;
+    padding: 25px;
+    background-color: #F9F6F0;
+
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+
+    overflow-y: auto;
+}
+
+/* Estado inicial sin mensajes */
+
+.chat-sin-mensajes {
+    margin: auto;
+    max-width: 350px;
+    text-align: center;
+    color: var(--texto-secundario);
+}
+
+.chat-sin-mensajes i {
+    font-size: 45px;
+    color: var(--verde);
+}
+
+.chat-sin-mensajes h3 {
+    color: var(--petroleo);
+}
+
+/* Zona para escribir */
+
+.chat-privado-pie {
+    padding: 20px;
+    background-color: #FFFDF9;
+    border-top: 1px solid var(--arena);
+}
+
+.chat-privado-pie .form-control {
+    padding: 13px;
+    border: 1px solid #C9C4B8;
+    border-radius: 9px;
+}
+
+.chat-privado-pie .form-control:focus {
+    border-color: var(--verde);
+    box-shadow: 0 0 0 0.2rem rgba(57, 116, 110, 0.15);
+}
+
+.chat-boton-enviar {
+    min-width: 50px;
+    height: 50px;
+    font-size: 19px;
+}
+
+/* =====================================
+   VISTA DEL ADMINISTRADOR
+   ===================================== */
+
+.chat-admin-contenedor {
+    background-color: #FFFDF9;
+    border: 1px solid var(--arena);
+    border-radius: 16px;
+    overflow: hidden;
+}
+
+.chat-admin-sidebar {
+    background-color: var(--arena);
+    border-right: 1px solid #D3C6B4;
+}
+
+.chat-admin-sidebar h2 {
+    color: var(--petroleo);
+}
+
+.chat-admin-sidebar .input-group-text {
+    background-color: #FFFDF9;
+    border-color: #C9C4B8;
+    color: var(--verde);
+}
+
+.chat-admin-sidebar .form-control {
+    border-color: #C9C4B8;
+}
+
+.chat-admin-sidebar #listaConversaciones {
+    color: var(--texto-secundario);
+}
+
+/* Conversación abierta */
+
+.chat-admin-conversacion {
+    display: flex;
+    flex-direction: column;
+    min-height: 610px;
+}
+
+.chat-admin-conversacion .chat-privado-mensajes {
+    flex: 1;
+}
+
+/* Preparado para los mensajes reales */
+
+.chat-burbuja-recibida {
+    align-self: flex-start;
+    max-width: 75%;
+    padding: 14px 18px;
+    border-radius: 14px 14px 14px 4px;
+    background-color: #FFFDF9;
+    border: 1px solid var(--arena);
+    color: var(--petroleo);
+}
+
+.chat-burbuja-enviada {
+    align-self: flex-end;
+    max-width: 75%;
+    padding: 14px 18px;
+    border-radius: 14px 14px 4px 14px;
+    background-color: #DCEBE7;
+    color: var(--petroleo);
+}
+
+/* Adaptación a móviles */
+
+@media (max-width: 767px) {
+
+    .chat-admin-sidebar {
+        border-right: none;
+        border-bottom: 1px solid #D3C6B4;
+    }
+
+    .chat-privado-cabecera {
+        padding: 15px;
+    }
+
+    .chat-privado-mensajes {
+        min-height: 350px;
+        padding: 15px;
+    }
+
+    .chat-privado-pie {
+        padding: 12px;
+    }
+
+    .chat-burbuja-recibida,
+    .chat-burbuja-enviada {
+        max-width: 90%;
+    }
+}
+
+/* Adaptación para móviles */
+
+@media (max-width: 768px) {
+
+    .tarea-resumen {
+        padding: 20px;
+    }
+
+    .tarea-resumen h2 {
+        font-size: 26px;
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* =====================================
+   DISEÑO RESPONSIVE
+   ===================================== */
+
+@media (max-width: 768px) {
+    .hero {
+        padding: 70px 0;
+    }
+
+    .hero-description {
+        font-size: 16px;
+    }
+
+    .feature-card {
+        padding: 25px;
+    }
+}
+
+@media (max-width: 576px) {
+    .login-content {
+        min-height: auto;
+        padding-top: 60px;
+    }
+}
+
+/* Tarjetas pulsables del inicio */
+
+button.feature-card {
+    cursor: pointer;
+    font-family: inherit;
+    text-align: center;
+}
+
+button.feature-card:focus-visible {
+    outline: 3px solid var(--verde);
+    outline-offset: 4px;
+}
