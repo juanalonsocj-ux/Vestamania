@@ -1,179 +1,1050 @@
+
 <!DOCTYPE html>
 <html lang="es">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Vestamania | Gestión de tareas</title>
 
-    <!-- Bootstrap 5 -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- BOOTSTRAP 5 -->
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+        rel="stylesheet">
 
-    <!-- Bootstrap Icons -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css" rel="stylesheet">
+    <!-- BOOTSTRAP ICONS -->
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
+        rel="stylesheet">
 
-    <!-- Estilos propios -->
+    <!-- CSS DEL PROYECTO -->
     <link rel="stylesheet" href="../css/style.css">
+
+    <!-- ESTILOS DE LA PÁGINA PRINCIPAL -->
+    <style>
+
+        .inicio-pagina {
+            background-color: #F5F0E7;
+            color: #173F43;
+            min-height: 100vh;
+        }
+
+        /* BARRA DE NAVEGACIÓN */
+
+        .inicio-navbar {
+            background-color: #173F43;
+            padding: 14px 0;
+        }
+
+        .inicio-navbar .navbar-brand {
+            color: #FFFFFF;
+            font-size: 21px;
+            font-weight: 800;
+            letter-spacing: 1px;
+        }
+
+        .inicio-navbar .navbar-brand:hover {
+            color: #E8DDCA;
+        }
+
+        .inicio-logo {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+
+            width: 40px;
+            height: 40px;
+
+            background-color: #39746E;
+            border-radius: 10px;
+            color: #FFFFFF;
+            font-size: 21px;
+        }
+
+        .inicio-btn-acceso {
+            background-color: #75958A;
+            color: #FFFFFF;
+            border: none;
+            border-radius: 8px;
+            padding: 11px 19px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: background-color 0.2s;
+        }
+
+        .inicio-btn-acceso:hover {
+            background-color: #5F7E74;
+            color: #FFFFFF;
+        }
+
+        /* PRESENTACIÓN */
+
+        .inicio-hero {
+            padding: 85px 0 80px;
+        }
+
+        .inicio-etiqueta {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+
+            padding: 9px 15px;
+
+            background-color: #E8DDCA;
+            color: #39746E;
+            border-radius: 30px;
+
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 0.4px;
+        }
+
+        .inicio-titulo {
+            font-size: clamp(35px, 4.3vw, 58px);
+            line-height: 1.13;
+            font-weight: 800;
+            color: #173F43;
+        }
+
+        .inicio-titulo span {
+            color: #39746E;
+        }
+
+        .inicio-descripcion {
+            max-width: 570px;
+            font-size: 17px;
+            line-height: 1.8;
+            color: #566B65;
+        }
+
+        .inicio-btn-principal {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+
+            padding: 14px 24px;
+            border-radius: 9px;
+
+            background-color: #173F43;
+            color: #FFFFFF;
+            text-decoration: none;
+            font-weight: 700;
+
+            transition: background-color 0.2s,
+                        transform 0.2s;
+        }
+
+        .inicio-btn-principal:hover {
+            background-color: #39746E;
+            color: #FFFFFF;
+            transform: translateY(-2px);
+        }
+
+        .inicio-ayuda {
+            color: #566B65;
+            font-size: 13px;
+        }
+
+        /* TARJETA DECORATIVA DEL HERO */
+
+        .inicio-vista {
+            background-color: #FFFDF9;
+            border: 1px solid #E8DDCA;
+            border-radius: 19px;
+            padding: 28px;
+
+            box-shadow: 0 15px 45px rgba(23, 63, 67, 0.09);
+        }
+
+        .inicio-vista-cabecera {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+
+            margin-bottom: 25px;
+        }
+
+        .inicio-vista-icono {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            width: 48px;
+            height: 48px;
+            border-radius: 12px;
+
+            background-color: #DCEBE7;
+            color: #39746E;
+            font-size: 23px;
+        }
+
+        .inicio-vista-fila {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+
+            padding: 15px;
+            margin-bottom: 12px;
+
+            border: 1px solid #E8DDCA;
+            border-radius: 11px;
+            background-color: #FFFFFF;
+        }
+
+        .inicio-vista-fila:last-child {
+            margin-bottom: 0;
+        }
+
+        .inicio-vista-fila > i {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            width: 42px;
+            height: 42px;
+            flex-shrink: 0;
+
+            background-color: #F5F0E7;
+            color: #39746E;
+            border-radius: 10px;
+            font-size: 20px;
+        }
+
+        .inicio-vista-fila strong {
+            color: #173F43;
+            font-size: 14px;
+        }
+
+        .inicio-vista-fila p {
+            margin: 4px 0 0;
+            color: #566B65;
+            font-size: 12px;
+        }
+
+        /* FUNCIONALIDADES */
+
+        .inicio-seccion {
+            padding: 75px 0;
+            background-color: #FFFFFF;
+        }
+
+        .inicio-seccion-titulo {
+            font-size: clamp(27px, 3vw, 36px);
+            font-weight: 800;
+            color: #173F43;
+        }
+
+        .inicio-seccion-descripcion {
+            color: #566B65;
+            font-size: 16px;
+        }
+
+        .inicio-tarjeta {
+            display: block;
+            width: 100%;
+            height: 100%;
+            padding: 28px;
+            text-align: left;
+
+            border: 1px solid #E8DDCA;
+            border-radius: 15px;
+            background-color: #FFFDF9;
+
+            cursor: pointer;
+            transition: transform 0.2s,
+                        box-shadow 0.2s,
+                        border-color 0.2s;
+        }
+
+        .inicio-tarjeta:hover {
+            transform: translateY(-5px);
+            border-color: #75958A;
+            box-shadow: 0 12px 28px rgba(23, 63, 67, 0.09);
+        }
+
+        .inicio-tarjeta:focus-visible {
+            outline: 3px solid #39746E;
+            outline-offset: 3px;
+        }
+
+        .inicio-tarjeta-icono {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            width: 60px;
+            height: 60px;
+            margin-bottom: 24px;
+
+            background-color: #DCEBE7;
+            color: #39746E;
+            border-radius: 13px;
+            font-size: 28px;
+        }
+
+        .inicio-tarjeta h3 {
+            font-size: 21px;
+            font-weight: 700;
+            color: #173F43;
+        }
+
+        .inicio-tarjeta p {
+            margin: 12px 0 20px;
+            color: #566B65;
+            line-height: 1.7;
+            font-size: 14px;
+        }
+
+        .inicio-tarjeta-enlace {
+            color: #39746E;
+            font-size: 14px;
+            font-weight: 700;
+        }
+
+        /* ACCESO Y REGISTRO */
+
+        .inicio-acceso {
+            padding: 75px 0;
+        }
+
+        .inicio-acceso-caja {
+            padding: 45px 30px;
+
+            background-color: #173F43;
+            border-radius: 18px;
+            text-align: center;
+        }
+
+        .inicio-acceso-caja h2 {
+            color: #FFFFFF;
+            font-weight: 800;
+        }
+
+        .inicio-acceso-caja p {
+            color: #E8DDCA;
+        }
+
+        .inicio-btn-claro {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+
+            padding: 13px 24px;
+
+            background-color: #75958A;
+            border-radius: 8px;
+            color: #FFFFFF;
+
+            font-weight: 700;
+            text-decoration: none;
+        }
+
+        .inicio-btn-claro:hover {
+            background-color: #5F7E74;
+            color: #FFFFFF;
+        }
+
+        /* FOOTER */
+
+        .inicio-footer {
+            padding: 25px 0;
+            background-color: #173F43;
+            color: #E8DDCA;
+            font-size: 13px;
+        }
+
+        /* MÓVILES */
+
+        @media (max-width: 768px) {
+
+            .inicio-hero {
+                padding: 55px 0;
+            }
+
+            .inicio-seccion,
+            .inicio-acceso {
+                padding: 50px 0;
+            }
+
+            .inicio-vista {
+                padding: 20px;
+            }
+
+            .inicio-tarjeta {
+                padding: 23px;
+            }
+
+        }
+
+    </style>
+
 </head>
 
-<body>
+<body class="inicio-pagina">
 
-    <!-- BARRA DE NAVEGACIÓN -->
-    <header>
-        <nav class="navbar navbar-expand-lg bg-white border-bottom">
-            <div class="container py-2">
+    <!-- =====================================
+         BARRA DE NAVEGACIÓN
+         ===================================== -->
 
-                <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
-                    <span class="logo-icon">
-                        <i class="bi bi-layers"></i>
-                    </span>
-                    <span class="fw-bold">VESTAMANIA</span>
-                </a>
+    <nav class="navbar inicio-navbar">
 
-                <a href="login.html" class="btn btn-vestamania">
-                    Iniciar sesión
-                </a>
+        <div class="container">
+
+            <!-- LOGOTIPO -->
+            <a class="navbar-brand d-flex align-items-center gap-2"
+               href="index.html">
+
+                <span class="inicio-logo">
+                    <i class="bi bi-layers"></i>
+                </span>
+
+                VESTAMANIA
+
+            </a>
+
+            <!-- ACCESO -->
+            <a href="login.html"
+               class="inicio-btn-acceso">
+
+                <i class="bi bi-person-circle me-1"></i>
+                Acceder
+
+            </a>
+
+        </div>
+
+    </nav>
+
+
+    <!-- =====================================
+         PRESENTACIÓN PRINCIPAL
+         ===================================== -->
+
+    <main>
+
+        <section class="inicio-hero">
+
+            <div class="container">
+
+                <div class="row align-items-center g-5">
+
+                    <!-- TEXTO PRINCIPAL -->
+                    <div class="col-lg-6">
+
+                        <span class="inicio-etiqueta mb-4">
+
+                            <i class="bi bi-check2-circle"></i>
+                            ORGANIZACIÓN Y PRODUCTIVIDAD
+
+                        </span>
+
+                        <h1 class="inicio-titulo mb-4">
+
+                            Organiza tu equipo.
+                            <span>
+                                Gestiona tus tareas.
+                            </span>
+
+                        </h1>
+
+                        <p class="inicio-descripcion mb-4">
+
+                            Vestamania es una plataforma de gestión
+                            de tareas diseñada para ayudar a las
+                            empresas a organizar sus departamentos,
+                            administrar sus empleados y realizar
+                            el seguimiento del trabajo diario.
+
+                        </p>
+
+                        <div class="d-flex flex-wrap
+                                    align-items-center gap-3">
+
+                            <a href="login.html"
+                               class="inicio-btn-principal">
+
+                                Comenzar ahora
+
+                                <i class="bi bi-arrow-right"></i>
+
+                            </a>
+
+                            <span class="inicio-ayuda">
+
+                                <i class="bi bi-shield-check me-1"></i>
+
+                                Acceso para administradores
+                                y empleados
+
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- VISTA ILUSTRATIVA -->
+                    <div class="col-lg-6">
+
+                        <div class="inicio-vista">
+
+                            <div class="inicio-vista-cabecera">
+
+                                <div>
+
+                                    <h2 class="h5 fw-bold mb-1">
+                                        Tu espacio de trabajo
+                                    </h2>
+
+                                    <p class="small text-secondary mb-0">
+                                        Todo organizado en un mismo lugar
+                                    </p>
+
+                                </div>
+
+                                <span class="inicio-vista-icono">
+                                    <i class="bi bi-grid-1x2"></i>
+                                </span>
+
+                            </div>
+
+                            <!-- DEPARTAMENTOS -->
+                            <div class="inicio-vista-fila">
+
+                                <i class="bi bi-building"></i>
+
+                                <div>
+
+                                    <strong>
+                                        Departamentos
+                                    </strong>
+
+                                    <p>
+                                        Organización de las áreas
+                                        de la empresa
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+                            <!-- EMPLEADOS -->
+                            <div class="inicio-vista-fila">
+
+                                <i class="bi bi-people"></i>
+
+                                <div>
+
+                                    <strong>
+                                        Empleados
+                                    </strong>
+
+                                    <p>
+                                        Gestión de usuarios,
+                                        puestos y departamentos
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+                            <!-- TAREAS -->
+                            <div class="inicio-vista-fila">
+
+                                <i class="bi bi-clipboard-check"></i>
+
+                                <div>
+
+                                    <strong>
+                                        Tareas
+                                    </strong>
+
+                                    <p>
+                                        Seguimiento de tareas
+                                        pendientes y finalizadas
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+                            <p class="small text-secondary
+                                      text-center mt-4 mb-0">
+
+                                <i class="bi bi-info-circle me-1"></i>
+                                Vista ilustrativa de las funcionalidades
+
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
 
             </div>
-        </nav>
-    </header>
 
-    <!-- CONTENIDO PRINCIPAL -->
-    <main>
-        <section class="hero">
-            <div class="container text-center">
+        </section>
 
-                <p class="hero-label mb-3">
-                    GESTIÓN DE TAREAS PARA EMPRESAS
-                </p>
 
-                <h1 class="hero-title mb-4">
-                    Organiza tu equipo.<br>
-                    Simplifica el trabajo.
-                </h1>
+        <!-- =====================================
+             FUNCIONALIDADES
+             ===================================== -->
 
-                <p class="hero-description mx-auto mb-4">
-                    Una plataforma para gestionar departamentos,
-                    empleados y tareas desde un mismo lugar.
-                </p>
+        <section class="inicio-seccion" id="funcionalidades">
 
-                <a href="login.html" class="btn btn-vestamania btn-lg px-4">
-                    Acceder a Vestamania
-                </a>
+            <div class="container">
 
-                <!-- TARJETAS -->
-                <div class="row g-4 justify-content-center mt-5">
+                <div class="text-center mb-5">
+
+                    <h2 class="inicio-seccion-titulo mb-3">
+                        ¿Qué puedes hacer con Vestamania?
+                    </h2>
+
+                    <p class="inicio-seccion-descripcion mb-0">
+                        Una plataforma para organizar el trabajo
+                        de cada departamento.
+                    </p>
+
+                </div>
+
+                <div class="row g-4">
 
                     <!-- DEPARTAMENTOS -->
-                    <div class="col-12 col-md-4">
-                        <button type="button" class="feature-card w-100 h-100 border-0" data-bs-toggle="modal"
-                            data-bs-target="#modalDepartamentos">
-                            <i class="bi bi-building fs-1"></i>
-                            <h3>Departamentos</h3>
+                    <div class="col-md-4">
+
+                        <button type="button"
+                                class="inicio-tarjeta"
+                                data-bs-toggle="modal"
+                                data-bs-target="#modalDepartamentos">
+
+                            <span class="inicio-tarjeta-icono">
+
+                                <i class="bi bi-building"></i>
+
+                            </span>
+
+                            <h3>
+                                Departamentos
+                            </h3>
+
+                            <p>
+                                Organiza las diferentes áreas de
+                                tu empresa y administra los
+                                departamentos desde el panel
+                                del administrador.
+                            </p>
+
+                            <span class="inicio-tarjeta-enlace">
+
+                                Más información
+                                <i class="bi bi-arrow-right ms-1"></i>
+
+                            </span>
+
                         </button>
+
                     </div>
+
 
                     <!-- EMPLEADOS -->
-                    <div class="col-12 col-md-4">
-                        <button type="button" class="feature-card w-100 h-100 border-0" data-bs-toggle="modal"
-                            data-bs-target="#modalEmpleados">
-                            <i class="bi bi-people fs-1"></i>
-                            <h3>Empleados</h3>
+                    <div class="col-md-4">
+
+                        <button type="button"
+                                class="inicio-tarjeta"
+                                data-bs-toggle="modal"
+                                data-bs-target="#modalEmpleados">
+
+                            <span class="inicio-tarjeta-icono">
+
+                                <i class="bi bi-people"></i>
+
+                            </span>
+
+                            <h3>
+                                Empleados
+                            </h3>
+
+                            <p>
+                                Gestiona los trabajadores,
+                                sus puestos de trabajo y
+                                los departamentos a los que
+                                pertenecen.
+                            </p>
+
+                            <span class="inicio-tarjeta-enlace">
+
+                                Más información
+                                <i class="bi bi-arrow-right ms-1"></i>
+
+                            </span>
+
                         </button>
+
                     </div>
+
 
                     <!-- TAREAS -->
-                    <div class="col-12 col-md-4">
-                        <button type="button" class="feature-card w-100 h-100 border-0" data-bs-toggle="modal"
-                            data-bs-target="#modalTareas">
-                            <i class="bi bi-clipboard-check fs-1"></i>
-                            <h3>Tareas</h3>
+                    <div class="col-md-4">
+
+                        <button type="button"
+                                class="inicio-tarjeta"
+                                data-bs-toggle="modal"
+                                data-bs-target="#modalTareas">
+
+                            <span class="inicio-tarjeta-icono">
+
+                                <i class="bi bi-clipboard-check"></i>
+
+                            </span>
+
+                            <h3>
+                                Tareas
+                            </h3>
+
+                            <p>
+                                Consulta las tareas asignadas,
+                                revisa las pendientes y lleva
+                                el seguimiento del trabajo
+                                realizado.
+                            </p>
+
+                            <span class="inicio-tarjeta-enlace">
+
+                                Más información
+                                <i class="bi bi-arrow-right ms-1"></i>
+
+                            </span>
+
                         </button>
+
                     </div>
 
                 </div>
+
+            </div>
+
         </section>
+
+
+        <!-- =====================================
+             INICIAR SESIÓN O REGISTRARSE
+             ===================================== -->
+
+        <section class="inicio-acceso">
+
+            <div class="container">
+
+                <div class="inicio-acceso-caja">
+
+                    <div class="mb-3">
+
+                        <i class="bi bi-person-check"
+                           style="font-size: 38px; color: #75958A;"></i>
+
+                    </div>
+
+                    <h2 class="h3 mb-3">
+
+                        ¿Preparado para empezar?
+
+                    </h2>
+
+                    <p class="mb-4">
+
+                        Accede a tu cuenta o regístrate en
+                        Vestamania para formar parte de
+                        tu equipo de trabajo.
+
+                    </p>
+
+                    <a href="login.html"
+                       class="inicio-btn-claro">
+
+                        <i class="bi bi-box-arrow-in-right"></i>
+
+                        Iniciar sesión o registrarse
+
+                    </a>
+
+                    <p class="small mt-4 mb-0">
+
+                        Los empleados acceden a su propio
+                        departamento y a las tareas asignadas
+                        a su cuenta.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
     </main>
-    <!-- ALERTA DE DEPARTAMENTOS -->
-    <div class="modal fade" id="modalDepartamentos" tabindex="-1">
+
+
+    <!-- =====================================
+         FOOTER
+         ===================================== -->
+
+    <footer class="inicio-footer">
+
+        <div class="container">
+
+            <div class="d-flex flex-wrap
+                        justify-content-between
+                        align-items-center gap-2">
+
+                <span class="fw-bold">
+
+                    <i class="bi bi-layers me-1"></i>
+                    VESTAMANIA
+
+                </span>
+
+                <span>
+                    Proyecto de gestión de tareas empresariales
+                </span>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+    <!-- =====================================
+         MODAL DE DEPARTAMENTOS
+         ===================================== -->
+
+    <div class="modal fade"
+         id="modalDepartamentos"
+         tabindex="-1"
+         aria-labelledby="tituloModalDepartamentos"
+         aria-hidden="true">
+
         <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content modal-vestamania">
+
+            <div class="modal-content">
 
                 <div class="modal-header">
-                    <h5 class="modal-title">Acceso restringido</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+
+                    <h2 class="modal-title fs-5"
+                        id="tituloModalDepartamentos">
+
+                        <i class="bi bi-building me-2"></i>
+                        Gestión de departamentos
+
+                    </h2>
+
+                    <button type="button"
+                            class="btn-close"
+                            data-bs-dismiss="modal"
+                            aria-label="Cerrar">
+                    </button>
+
                 </div>
 
                 <div class="modal-body">
-                    Esta sección solo puede verla el administrador.
+
+                    <p>
+                        La creación, modificación y eliminación
+                        de departamentos corresponde al
+                        administrador de Vestamania.
+                    </p>
+
+                    <p class="mb-0 text-secondary small">
+                        Para acceder a estas funciones,
+                        inicia sesión con una cuenta
+                        de administrador autorizada.
+                    </p>
+
                 </div>
 
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                    <a href="login.html" class="btn btn-vestamania">
+
+                    <button type="button"
+                            class="btn btn-outline-secondary"
+                            data-bs-dismiss="modal">
+                        Cerrar
+                    </button>
+
+                    <a href="login.html"
+                       class="btn btn-vestamania">
                         Iniciar sesión
                     </a>
+
                 </div>
 
             </div>
+
         </div>
+
     </div>
 
-    <!-- ALERTA DE EMPLEADOS -->
-    <div class="modal fade" id="modalEmpleados" tabindex="-1">
+
+    <!-- =====================================
+         MODAL DE EMPLEADOS
+         ===================================== -->
+
+    <div class="modal fade"
+         id="modalEmpleados"
+         tabindex="-1"
+         aria-labelledby="tituloModalEmpleados"
+         aria-hidden="true">
+
         <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content modal-vestamania">
+
+            <div class="modal-content">
 
                 <div class="modal-header">
-                    <h5 class="modal-title">Acceso restringido</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+
+                    <h2 class="modal-title fs-5"
+                        id="tituloModalEmpleados">
+
+                        <i class="bi bi-people me-2"></i>
+                        Gestión de empleados
+
+                    </h2>
+
+                    <button type="button"
+                            class="btn-close"
+                            data-bs-dismiss="modal"
+                            aria-label="Cerrar">
+                    </button>
+
                 </div>
 
                 <div class="modal-body">
-                    Esta sección solo puede verla el administrador.
+
+                    <p>
+                        El administrador podrá gestionar
+                        los empleados de la empresa,
+                        sus departamentos y sus puestos
+                        de trabajo.
+                    </p>
+
+                    <p class="mb-0 text-secondary small">
+                        Estas funciones están reservadas
+                        al rol de administrador.
+                    </p>
+
                 </div>
 
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                    <a href="login.html" class="btn btn-vestamania">
+
+                    <button type="button"
+                            class="btn btn-outline-secondary"
+                            data-bs-dismiss="modal">
+                        Cerrar
+                    </button>
+
+                    <a href="login.html"
+                       class="btn btn-vestamania">
                         Iniciar sesión
                     </a>
+
                 </div>
 
             </div>
+
         </div>
+
     </div>
 
-    <!-- ALERTA DE TAREAS -->
-    <div class="modal fade" id="modalTareas" tabindex="-1">
+
+    <!-- =====================================
+         MODAL DE TAREAS
+         ===================================== -->
+
+    <div class="modal fade"
+         id="modalTareas"
+         tabindex="-1"
+         aria-labelledby="tituloModalTareas"
+         aria-hidden="true">
+
         <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content modal-vestamania">
+
+            <div class="modal-content">
 
                 <div class="modal-header">
-                    <h5 class="modal-title">Iniciar sesión</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+
+                    <h2 class="modal-title fs-5"
+                        id="tituloModalTareas">
+
+                        <i class="bi bi-clipboard-check me-2"></i>
+                        Gestión de tareas
+
+                    </h2>
+
+                    <button type="button"
+                            class="btn-close"
+                            data-bs-dismiss="modal"
+                            aria-label="Cerrar">
+                    </button>
+
                 </div>
 
                 <div class="modal-body">
-                    Inicia sesión para consultar tus tareas asignadas.
+
+                    <p>
+                        Las tareas se mostrarán según
+                        el usuario que haya iniciado sesión.
+                    </p>
+
+                    <p>
+                        <strong>Administrador:</strong>
+                        gestión de tareas y asignaciones.
+                    </p>
+
+                    <p>
+                        <strong>Empleado:</strong>
+                        consulta de sus propias tareas
+                        y seguimiento de su trabajo.
+                    </p>
+
+                    <p class="mb-0 text-secondary small">
+                        Debes iniciar sesión para entrar
+                        en tu espacio de trabajo.
+                    </p>
+
                 </div>
 
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                    <a href="login.html" class="btn btn-vestamania">
+
+                    <button type="button"
+                            class="btn btn-outline-secondary"
+                            data-bs-dismiss="modal">
+                        Cerrar
+                    </button>
+
+                    <a href="login.html"
+                       class="btn btn-vestamania">
                         Iniciar sesión
                     </a>
+
                 </div>
 
             </div>
+
         </div>
+
     </div>
-    <!-- Bootstrap JavaScript -->
+
+
+    <!-- =====================================
+         JAVASCRIPT
+         ===================================== -->
+
+    <!-- BOOTSTRAP -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 
-    <!-- JavaScript propio -->
+    <!-- JAVASCRIPT DEL PROYECTO -->
     <script src="../js/main.js"></script>
 
 </body>
-
 </html>

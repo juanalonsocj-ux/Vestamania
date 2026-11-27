@@ -1,0 +1,4 @@
+Administrador	admin@vestamania.test	Admin1234!	Todos
+Empleado	empleado@vestamania.test	Empleado1234!	Almacén
+Empleado	ventas@vestamania.test	Ventas1234!	Ventas
+Empleado	oficina@vestamania.test	Oficina1234!	Administración
