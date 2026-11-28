@@ -3,56 +3,76 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Mi espacio de trabajo | Vestamania</title>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="../css/style.css">
+
+    <link href="../css/style.css" rel="stylesheet">
 </head>
 
 <body class="admin2-body vm-employee-body">
 
-    <!-- BARRA SUPERIOR -->
+    <!-- MENÚ SUPERIOR -->
     <header>
-        <nav class="navbar navbar-expand-md admin2-navbar" aria-label="Mi espacio de trabajo">
+        <nav class="navbar navbar-expand-md admin2-navbar" aria-label="Navegación principal">
 
             <div class="container">
 
-                <a class="navbar-brand admin2-brand" href="empleado.html">
-                    <span class="admin2-logo" aria-hidden="true">
+                <a href="empleado.html" class="navbar-brand admin2-brand">
+
+                    <span class="admin2-logo">
                         <i class="bi bi-layers"></i>
                     </span>
                     VESTAMANIA
+
                 </a>
 
                 <button class="navbar-toggler admin2-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#menuEmpleadoSuperior" aria-controls="menuEmpleadoSuperior" aria-expanded="false"
                     aria-label="Abrir menú">
+
                     <i class="bi bi-list"></i>
                 </button>
 
                 <div class="collapse navbar-collapse" id="menuEmpleadoSuperior">
 
-                    <ul class="navbar-nav admin2-nav mx-md-auto">
+                    <ul class="navbar-nav admin2-nav mx-auto">
+
                         <li class="nav-item">
-                            <a href="empleado.html" class="nav-link active" aria-current="page">
+                            <a class="nav-link active" href="empleado.html" aria-current="page">
+
                                 <i class="bi bi-grid-1x2"></i>
                                 Mi espacio
                             </a>
                         </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="mensajes.html">
+
+                                <i class="bi bi-chat-dots"></i>
+                                Mensajes
+                            </a>
+                        </li>
+
                     </ul>
 
                     <div class="admin2-usuario">
+
                         <span class="admin2-usuario-rol">
-                            <i class="bi bi-person-circle me-1"></i>
+                            <i class="bi bi-person-circle"></i>
                             Empleado
                         </span>
 
                         <button type="button" id="cerrarSesion" class="btn admin2-btn-salir">
-                            <i class="bi bi-box-arrow-right me-1"></i>
+
+                            <i class="bi bi-box-arrow-right"></i>
                             Salir
                         </button>
+
                     </div>
 
                 </div>
@@ -64,91 +84,82 @@
     <main class="admin2-main vm-main">
         <div class="container">
 
-            <!-- CABECERA -->
+            <!-- BIENVENIDA -->
             <section class="vm-page-hero" aria-labelledby="tituloPagina">
 
-                <div class="d-flex flex-wrap align-items-center justify-content-between gap-4">
+                <div class="d-flex flex-wrap justify-content-between
+                            align-items-center gap-3">
 
                     <div class="vm-hero-copy">
+
                         <p class="admin2-etiqueta mb-2">
                             ÁREA DEL EMPLEADO
                         </p>
 
-                        <h1 id="tituloPagina" class="vm-page-title mb-2">
+                        <h1 class="vm-page-title mb-2" id="tituloPagina">
                             Mi espacio de trabajo
                         </h1>
 
                         <p class="admin2-texto-secundario mb-0">
-                            Consulta tu perfil, revisa tus tareas y accede
-                            al chat flotante para probar la mensajería.
+                            Consulta tu perfil, tus tareas
+                            y la mensajería de prueba.
                         </p>
+
                     </div>
 
                     <span class="vm-hero-icon d-none d-sm-flex" aria-hidden="true">
+
                         <i class="bi bi-person-workspace"></i>
                     </span>
 
                 </div>
             </section>
 
-            <!-- MENÚ DE PESTAÑAS -->
-            <nav class="vm-employee-tabs-wrap" aria-label="Mis secciones">
+            <!-- PESTAÑAS -->
+            <nav class="vm-employee-tabs-wrap" aria-label="Secciones del empleado">
 
-                <div class="nav nav-pills vm-employee-tabs gap-2" id="menuEmpleado" role="tablist"
-                    aria-label="Secciones de mi espacio de trabajo">
+                <div class="nav nav-pills vm-employee-tabs gap-2" role="tablist" id="menuEmpleado">
 
-                    <!-- PERFIL -->
-                    <button type="button" class="nav-link" id="perfil-tab" data-bs-toggle="pill"
+                    <button type="button" id="perfil-tab" class="nav-link" data-bs-toggle="pill"
                         data-bs-target="#perfil" role="tab" aria-controls="perfil" aria-selected="false">
-                        <i class="bi bi-person-circle me-2"></i>
+
+                        <i class="bi bi-person-circle"></i>
                         Mi perfil
                     </button>
 
-                    <!-- MIS TAREAS -->
-                    <button type="button" class="nav-link active" id="tareas-tab" data-bs-toggle="pill"
+                    <button type="button" id="tareas-tab" class="nav-link active" data-bs-toggle="pill"
                         data-bs-target="#misTareas" role="tab" aria-controls="misTareas" aria-selected="true">
-                        <i class="bi bi-clipboard-check me-2"></i>
+
+                        <i class="bi bi-clipboard-check"></i>
                         Mis tareas
                     </button>
 
-                    <!-- PENDIENTES -->
-                    <button type="button" class="nav-link" id="pendientes-tab" data-bs-toggle="pill"
+                    <button type="button" id="pendientes-tab" class="nav-link" data-bs-toggle="pill"
                         data-bs-target="#pendientes" role="tab" aria-controls="pendientes" aria-selected="false">
-                        <i class="bi bi-clock-history me-2"></i>
-                        Tareas pendientes
+
+                        <i class="bi bi-clock-history"></i>
+                        Pendientes
                     </button>
 
-                    <!-- FINALIZADAS -->
-                    <button type="button" class="nav-link" id="finalizadas-tab" data-bs-toggle="pill"
+                    <button type="button" id="finalizadas-tab" class="nav-link" data-bs-toggle="pill"
                         data-bs-target="#finalizadas" role="tab" aria-controls="finalizadas" aria-selected="false">
-                        <i class="bi bi-check-circle me-2"></i>
-                        Tareas finalizadas
+
+                        <i class="bi bi-check-circle"></i>
+                        Finalizadas
                     </button>
 
                 </div>
-
             </nav>
 
-            <!-- CONTENIDO DE LAS PESTAÑAS -->
+            <!-- CONTENIDO DE PESTAÑAS -->
             <div class="tab-content vm-employee-tab-body" id="contenidoEmpleado">
 
-                <!-- ==========================
-             MI PERFIL
-             ========================== -->
-
+                <!-- MI PERFIL -->
                 <section class="tab-pane fade" id="perfil" role="tabpanel" aria-labelledby="perfil-tab" tabindex="0">
 
-                    <p class="admin-eyebrow mb-2">
-                        MI CUENTA
-                    </p>
-
-                    <h1 class="fw-bold mb-3">
+                    <h2 class="h4 fw-bold mb-3">
                         Mi perfil
-                    </h1>
-
-                    <p class="admin-muted mb-4">
-                        Consulta tus datos dentro de Vestamania.
-                    </p>
+                    </h2>
 
                     <div class="empleado-caja">
 
@@ -158,36 +169,25 @@
                                 <i class="bi bi-person"></i>
                             </div>
 
-                            <div>
-                                <h2 class="h5 fw-bold mb-1" id="perfilNombre">
-                                    Mi cuenta
-                                </h2>
-
-                                <p class="admin-muted mb-0">
-                                    Empleado
-                                </p>
-                            </div>
+                            <h3 id="perfilNombre" class="h5 mb-0">
+                                Mi cuenta
+                            </h3>
 
                         </div>
 
                         <div class="row g-4">
 
-                            <!-- CORREO -->
                             <div class="col-md-6">
-
                                 <p class="empleado-dato-etiqueta">
-                                    Correo electrónico
+                                    Correo
                                 </p>
 
-                                <p class="empleado-dato-valor" id="perfilCorreo">
+                                <p id="perfilCorreo" class="empleado-dato-valor">
                                     Sin datos
                                 </p>
-
                             </div>
 
-                            <!-- ROL -->
                             <div class="col-md-6">
-
                                 <p class="empleado-dato-etiqueta">
                                     Rol
                                 </p>
@@ -195,67 +195,50 @@
                                 <p class="empleado-dato-valor">
                                     Empleado
                                 </p>
-
                             </div>
 
-                            <!-- DEPARTAMENTO -->
                             <div class="col-md-6">
-
                                 <p class="empleado-dato-etiqueta">
                                     Departamento
                                 </p>
 
-                                <p class="empleado-dato-valor" id="perfilDepartamento">
-                                    Pendiente de cargar
+                                <p id="perfilDepartamento" class="empleado-dato-valor">
+                                    Sin asignar
                                 </p>
-
                             </div>
 
-                            <!-- PUESTO -->
                             <div class="col-md-6">
-
                                 <p class="empleado-dato-etiqueta">
-                                    Puesto de trabajo
+                                    Puesto
                                 </p>
 
-                                <p class="empleado-dato-valor" id="perfilPuesto">
-                                    Pendiente de cargar
+                                <p id="perfilPuesto" class="empleado-dato-valor">
+                                    Sin asignar
                                 </p>
-
                             </div>
 
                         </div>
+
                     </div>
 
                 </section>
 
-                <!-- ==========================
-             MIS TAREAS
-             ========================== -->
-
+                <!-- MIS TAREAS -->
                 <section class="tab-pane fade show active" id="misTareas" role="tabpanel" aria-labelledby="tareas-tab"
                     tabindex="0">
 
-                    <p class="admin-eyebrow mb-2">
-                        MI ESPACIO DE TRABAJO
-                    </p>
-
-                    <h1 class="fw-bold mb-2">
+                    <h2 class="h4 fw-bold mb-3">
                         Mis tareas
-                    </h1>
-
-                    <p class="admin-muted mb-4">
-                        Consulta tu tarea actual.
-                    </p>
+                    </h2>
 
                     <div class="tarea-actual">
 
-                        <div class="d-flex flex-wrap justify-content-between align-items-center gap-3 mb-4">
+                        <div class="d-flex flex-wrap gap-3
+                                    justify-content-between mb-3">
 
-                            <h2 class="h5 fw-bold mb-0">
-                                <i class="bi bi-clipboard-check me-2"></i>
+                            <h3 class="h5 fw-bold">
                                 Mi tarea actual
-                            </h2>
+                            </h3>
 
                             <span id="estadoTareaActual" class="badge text-bg-secondary">
                                 Cargando...
@@ -263,122 +246,78 @@
 
                         </div>
 
-                        <!-- TÍTULO -->
-                        <h3 id="tituloTareaActual" class="tarea-titulo mb-3">
-                            Cargando tarea...
-                        </h3>
+                        <h4 id="tituloTareaActual" class="tarea-titulo mb-3">
+                            Cargando...
+                        </h4>
 
-                        <!-- DESCRIPCIÓN -->
-                        <p id="descripcionTareaActual" class="admin-muted mb-4">
-                            Consultando tu tarea asignada.
+                        <p id="descripcionTareaActual" class="admin-muted">
+                            Cargando datos...
                         </p>
 
-                        <!-- DEPARTAMENTO Y PRIORIDAD -->
                         <div class="tarea-detalles mb-4">
 
-                            <div class="d-flex align-items-center gap-2 mb-2">
-                                <i class="bi bi-building"></i>
+                            <p id="departamentoTareaActual" class="mb-2">
+                                Departamento: —
+                            </p>
 
-                                <span id="departamentoTareaActual">
-                                    Departamento: —
-                                </span>
-                            </div>
-
-                            <div class="d-flex align-items-center gap-2">
-                                <i class="bi bi-flag"></i>
-
-                                <span id="prioridadTareaActual">
-                                    Prioridad: —
-                                </span>
-                            </div>
+                            <p id="prioridadTareaActual" class="mb-0">
+                                Prioridad: —
+                            </p>
 
                         </div>
 
-                        <!-- ACCIONES DE TAREA -->
                         <div class="row g-3">
 
                             <div class="col-md-6">
-                                <button type="button" id="finalizarTarea"
-                                    class="btn btn-vestamania empleado-btn-tarea w-100" enabled>
+
+                                <button type="button" id="finalizarTarea" class="btn btn-vestamania
+                                               empleado-btn-tarea w-100">
+
                                     <i class="bi bi-check-circle me-2"></i>
                                     Finalizar tarea
                                 </button>
+
                             </div>
 
                             <div class="col-md-6">
-                                <button type="button" id="guardarPendiente"
-                                    class="btn btn-cobre empleado-btn-tarea w-100" enabled>
+
+                                <button type="button" id="guardarPendiente" class="btn btn-cobre
+                                               empleado-btn-tarea w-100">
+
                                     <i class="bi bi-bookmark me-2"></i>
-                                    Guardar tarea pendiente
+                                    Guardar pendiente
                                 </button>
+
                             </div>
 
                         </div>
 
-                        <p class="small admin-muted mt-4 mb-0">
-                            Las acciones se activarán cuando
-                            programemos la gestión de tareas.
-                        </p>
-
                     </div>
 
                 </section>
 
-                <!-- ==========================
-             TAREAS PENDIENTES
-             ========================== -->
-
+                <!-- PENDIENTES -->
                 <section class="tab-pane fade" id="pendientes" role="tabpanel" aria-labelledby="pendientes-tab"
                     tabindex="0">
 
-                    <p class="admin-eyebrow mb-2">
-                        SEGUIMIENTO DE TAREAS
-                    </p>
-
-                    <h1 class="fw-bold mb-2">
+                    <h2 class="h4 fw-bold mb-3">
                         Tareas pendientes
-                    </h1>
-
-                    <p class="admin-muted mb-4">
-                        Aquí consultarás las tareas propias
-                        que hayas guardado para continuar después.
-                    </p>
+                    </h2>
 
                     <div id="listaPendientes" class="d-grid gap-3">
-
-                        <div class="empleado-caja empleado-estado-vacio">
-                            Cargando tareas...
-                        </div>
-
                     </div>
 
                 </section>
 
-                <!-- ==========================
-             TAREAS FINALIZADAS
-             ========================== -->
-
+                <!-- FINALIZADAS -->
                 <section class="tab-pane fade" id="finalizadas" role="tabpanel" aria-labelledby="finalizadas-tab"
                     tabindex="0">
 
-                    <p class="admin-eyebrow mb-2">
-                        HISTORIAL DE TRABAJO
-                    </p>
-
-                    <h1 class="fw-bold mb-2">
+                    <h2 class="h4 fw-bold mb-3">
                         Tareas finalizadas
-                    </h1>
-
-                    <p class="admin-muted mb-4">
-                        Consulta las tareas que has completado.
-                    </p>
+                    </h2>
 
                     <div id="listaFinalizadas" class="d-grid gap-3">
-
-                        <div class="empleado-caja empleado-estado-vacio">
-                            Cargando historial...
-                        </div>
-
                     </div>
 
                 </section>
@@ -386,39 +325,37 @@
             </div>
 
             <p class="vm-demo-notice mt-4">
-                <i class="bi bi-info-circle me-2"></i>
-                Datos y tareas de demostración.
-                Las operaciones definitivas se conectarán a Laravel y MariaDB.
+                Las tareas y los mensajes se guardan
+                en el navegador; Laravel se conectará
+                más adelante.
             </p>
 
         </div>
     </main>
 
     <footer class="admin2-footer">
-        <div class="container d-flex flex-wrap justify-content-between gap-2">
+        <div class="container d-flex justify-content-between
+                    gap-2 flex-wrap">
+
             <span>
-                <i class="bi bi-layers me-1"></i>
+                <i class="bi bi-layers"></i>
                 VESTAMANIA
             </span>
+
             <span>Área de empleado</span>
+
         </div>
     </footer>
 
-    <!-- ==========================
-       BOTÓN FLOTANTE DEL CHAT
-       ========================== -->
+    <!-- BOTÓN FLOTANTE -->
+    <button type="button" id="abrirChat" class="chat-flotante-boton" aria-label="Abrir chat" aria-controls="ventanaChat"
+        aria-expanded="false">
 
-    <button type="button" id="abrirChat" class="chat-flotante-boton"
-        aria-label="Abrir conversación con el administrador" aria-controls="ventanaChat" aria-expanded="false">
-        <i class="bi bi-chat-dots-fill" aria-hidden="true"></i>
+        <i class="bi bi-chat-dots-fill"></i>
     </button>
 
-    <!-- ==========================
-       VENTANA DEL CHAT
-       ========================== -->
-
-    <section id="ventanaChat" class="chat-flotante-ventana" aria-label="Chat con el administrador (demostración)"
-        hidden>
+    <!-- VENTANA DEL CHAT -->
+    <section id="ventanaChat" class="chat-flotante-ventana" aria-label="Chat con el administrador" hidden>
 
         <!-- CABECERA -->
         <div class="chat-flotante-cabecera">
@@ -430,63 +367,51 @@
                 </span>
 
                 <div>
+
                     <h2 class="chat-flotante-titulo">
                         Administrador
                     </h2>
 
                     <p class="chat-flotante-subtitulo">
-                        Modo demostración
+                        Demostración
                     </p>
+
                 </div>
 
             </div>
 
-            <button type="button" id="cerrarChat" class="chat-flotante-cerrar" aria-label="Cerrar conversación">
+            <button id="cerrarChat" type="button" class="chat-flotante-cerrar" aria-label="Cerrar chat">
+
                 <i class="bi bi-x-lg"></i>
             </button>
 
         </div>
 
         <!-- MENSAJES -->
-        <div id="mensajesChat" class="chat-flotante-mensajes" role="log" aria-live="polite">
-
-            <div class="chat-flotante-vacio">
-
-                <i class="bi bi-chat-square-dots"></i>
-
-                <p class="fw-bold mt-3 mb-2">
-                    Tu conversación con el administrador
-                </p>
-
-                <p class="small mb-0">
-                    Escribe un mensaje para probar el chat.
-                </p>
-
-            </div>
-
+        <div id="mensajesChat" class="chat-flotante-mensajes" aria-live="polite">
         </div>
 
-        <!-- FORMULARIO DEL CHAT -->
+        <!-- ESCRIBIR -->
         <div class="chat-flotante-pie">
 
             <form id="formChatFlotante" class="d-flex align-items-center gap-2">
 
-                <label for="textoChatFlotante" class="visually-hidden">
-                    Escribe un mensaje
+                <label class="visually-hidden" for="textoChatFlotante">
+                    Mensaje
                 </label>
 
-                <input type="text" id="textoChatFlotante" class="form-control" placeholder="Escribe un mensaje..."
-                    autocomplete="off" maxlength="1000" required>
+                <input type="text" id="textoChatFlotante" class="form-control" maxlength="1000" required
+                    placeholder="Escribe un mensaje...">
 
                 <button type="submit" class="btn btn-cobre chat-flotante-enviar" aria-label="Enviar mensaje">
+
                     <i class="bi bi-send"></i>
                 </button>
 
             </form>
 
             <p class="chat-flotante-aviso">
-                Modo demostración: los mensajes todavía
-                no llegan al administrador.
+                Modo de prueba: sin servidor.
             </p>
 
         </div>
@@ -495,6 +420,7 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
     <script src="../js/main.js"></script>
+
 </body>
 
 </html>
