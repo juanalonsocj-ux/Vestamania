@@ -1,7 +1,526 @@
 
-/* =====================================
-   VESTAMANIA - ESTILOS GENERALES
-   ===================================== */
+/* VESTAMANIA - ESTILOS GENERALES */
+:root { --petroleo: #173F43; --verde: #39746E; --cobre: #B87955; --arena: #E8DDCA; --crema: #F5F0E7; --texto-secundario: #566B65; }
+body { font-family: "Segoe UI", Arial, sans-serif; background-color: var(--crema); color: var(--petroleo); }
+
+/* BARRA DE NAVEGACIÓN */
+.navbar { background-color: var(--petroleo) !important; border-bottom: none !important; }
+.navbar-brand, .navbar-brand:hover { color: var(--crema); letter-spacing: 1px; }
+.logo-icon { display: inline-flex; align-items: center; justify-content: center; width: 38px; height: 38px; border-radius: 8px; background-color: var(--verde); color: var(--crema); font-size: 20px; }
+.navbar a.text-secondary { color: var(--crema) !important; }
+.navbar a.text-secondary:hover { color: var(--cobre) !important; }
+
+/* BOTONES PERSONALIZADOS */
+.btn-vestamania { background-color: var(--petroleo); color: var(--crema); border: 1px solid var(--petroleo); border-radius: 8px; padding: 10px 22px; font-weight: 600; transition: all 0.2s ease; }
+.btn-vestamania:hover { background-color: var(--verde); border-color: var(--verde); color: var(--crema); }
+
+/* Botón Iniciar sesión - Verde salvia */
+.navbar .btn-vestamania { background-color: #75958A; border-color: #75958A; color: #173F43; }
+.navbar .btn-vestamania:hover { background-color: #5F7E74; border-color: #5F7E74; color: #FFFFFF; }
+.btn-cobre { background-color: var(--cobre); border: 1px solid var(--cobre); color: var(--petroleo); border-radius: 8px; padding: 10px 20px; font-weight: 600; }
+.btn-cobre:hover { background-color: var(--arena); border-color: var(--arena); color: var(--petroleo); }
+.btn-verde { background-color: var(--verde); color: var(--crema); border: 1px solid var(--verde); border-radius: 8px; padding: 11px 20px; font-weight: 600; }
+.btn-verde:hover { background-color: var(--petroleo); border-color: var(--petroleo); color: var(--crema); }
+
+/* INDEX - PÁGINA PRINCIPAL */
+.hero { background-color: var(--crema); padding: 110px 0 100px; }
+.hero-label { color: var(--verde); font-size: 13px; font-weight: 700; letter-spacing: 2px; }
+.hero-title { color: var(--petroleo); font-size: clamp(36px, 5vw, 60px); font-weight: 700; line-height: 1.15; letter-spacing: -1.5px; }
+.hero-description { max-width: 580px; color: var(--texto-secundario); font-size: 18px; line-height: 1.7; }
+
+/* Tarjetas del inicio */
+.feature-card { background-color: var(--arena); color: var(--petroleo); border-radius: 14px; padding: 35px 20px; transition: transform 0.2s ease, box-shadow 0.2s ease; }
+.feature-card i { color: var(--verde); }
+.feature-card:hover { transform: translateY(-5px); box-shadow: 0 10px 25px rgba(23, 63, 67, 0.12); }
+.feature-card h3 { font-size: 18px; font-weight: 600; margin-top: 16px; margin-bottom: 0; }
+button.feature-card { cursor: pointer; font-family: inherit; text-align: center; }
+button.feature-card:focus-visible { outline: 3px solid var(--verde); outline-offset: 4px; }
+
+/* LOGIN - INICIO DE SESIÓN */
+.login-page { background-color: var(--crema); min-height: 100vh; }
+.login-content { min-height: calc(100vh - 75px); padding-top: 35px; padding-bottom: 35px; }
+.login-card { background-color: #FFFDF9; border: 1px solid var(--arena); border-radius: 16px; }
+.login-card h1 { color: var(--petroleo); }
+.login-card .text-secondary { color: var(--texto-secundario) !important; }
+.login-card .form-label { color: var(--petroleo); font-weight: 500; }
+.login-card .form-control { padding: 12px; border-color: #C9C4B8; }
+.login-card .form-control:focus { border-color: var(--verde); box-shadow: 0 0 0 0.2rem rgba(57, 116, 110, 0.15); }
+.login-card .btn-vestamania { padding: 12px; }
+.login-card .btn-outline-secondary { border-color: #C9C4B8; color: var(--verde); }
+.login-card .btn-outline-secondary:hover { background-color: var(--arena); color: var(--petroleo); }
+
+/* PANEL DEL ADMINISTRADOR */
+.admin-page { background-color: var(--crema); }
+.admin-navbar { background-color: var(--petroleo); min-height: 76px; }
+.admin-role { color: var(--arena); font-size: 14px; }
+.admin-icon-btn { color: var(--crema); font-size: 20px; border: none; }
+.admin-icon-btn:hover { color: var(--cobre); }
+
+/* Menú lateral del administrador */
+.admin-sidebar { background-color: var(--arena); min-height: calc(100vh - 76px); }
+.sidebar-label { font-size: 11px; font-weight: 700; letter-spacing: 2px; color: var(--texto-secundario); }
+.admin-sidebar .nav-link { color: var(--petroleo); padding: 13px 15px; border-radius: 9px; font-weight: 500; transition: background-color 0.2s; }
+.admin-sidebar .nav-link:hover { background-color: rgba(57, 116, 110, 0.12); }
+.admin-sidebar .nav-link.active { background-color: var(--petroleo); color: var(--crema); }
+.admin-main { min-height: calc(100vh - 76px); }
+.admin-main h1 { color: var(--petroleo); }
+.admin-eyebrow { color: var(--verde); font-size: 12px; font-weight: 700; letter-spacing: 2px; }
+.admin-muted { color: var(--texto-secundario); }
+
+/* Tarjetas de estadísticas */
+.admin-stat-card { background-color: #FFFDF9; border: 1px solid var(--arena); border-radius: 14px; padding: 25px; height: 100%; }
+.admin-stat-card i { color: var(--verde); font-size: 28px; }
+.admin-stat-card p { margin: 16px 0 8px; color: var(--texto-secundario); font-size: 14px; }
+.admin-stat-card h2 { color: var(--petroleo); font-size: 28px; font-weight: 700; margin: 0; }
+.admin-panel-box { background-color: #FFFDF9; border: 1px solid var(--arena); border-radius: 14px; padding: 30px; }
+
+/* GESTIÓN DE DEPARTAMENTOS */
+.tabla-vestamania { --bs-table-bg: transparent; --bs-table-hover-bg: #F5F0E7; }
+.tabla-vestamania thead th { color: var(--petroleo); font-size: 14px; border-bottom: 2px solid var(--arena); padding: 15px 12px; }
+.tabla-vestamania tbody td { padding: 16px 12px; color: var(--texto-secundario); border-bottom-color: var(--arena); }
+.btn-accion { border: none; background: transparent; font-size: 18px; padding: 5px 9px; }
+.btn-editar { color: var(--verde); }
+.btn-eliminar { color: #A65C48; }
+.btn-accion:hover { background-color: var(--crema); border-radius: 6px; }
+.modal-vestamania { background-color: #FFFDF9; border: none; border-radius: 14px; }
+.modal-vestamania .modal-header, .modal-vestamania .modal-footer { border-color: var(--arena); }
+.modal-vestamania .modal-title { color: var(--petroleo); font-weight: 700; }
+
+/* GESTIÓN DE EMPLEADOS */
+.badge-activo { background-color: #DDECE4; color: #27654C; padding: 7px 12px; font-weight: 600; border-radius: 20px; }
+.badge-inactivo { background-color: #F1DDD2; color: #94563D; padding: 7px 12px; font-weight: 600; border-radius: 20px; }
+.modal-vestamania .form-control, .modal-vestamania .form-select { border: 1px solid #C9C4B8; border-radius: 8px; padding: 11px 12px; }
+.modal-vestamania .form-control:focus, .modal-vestamania .form-select:focus { border-color: var(--verde); box-shadow: 0 0 0 0.2rem rgba(57, 116, 110, 0.15); }
+.admin-panel-box .input-group-text { background-color: var(--arena); border-color: #C9C4B8; color: var(--petroleo); }
+
+/* GESTIÓN DE TAREAS */
+.tarea-resumen { background-color: #FFFDF9; border: 1px solid var(--arena); border-radius: 14px; padding: 25px; height: 100%; }
+.tarea-resumen-icon { width: 45px; height: 45px; background-color: var(--arena); color: var(--verde); border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 22px; }
+.tarea-resumen p { margin-top: 18px; margin-bottom: 5px; color: var(--texto-secundario); font-size: 14px; }
+.tarea-resumen h2 { color: var(--petroleo); font-size: 30px; font-weight: 700; margin-bottom: 0; }
+
+/* Estados de las tareas */
+.estado-pendiente { background-color: #F4E3D8; color: #865137; }
+.estado-curso { background-color: #DCEBE7; color: #265F5B; }
+.estado-finalizada { background-color: #E2ECDD; color: #386444; }
+.estado-pendiente, .estado-curso, .estado-finalizada { padding: 8px 12px; border-radius: 20px; font-weight: 600; }
+
+/* Prioridades */
+.prioridad-alta { color: #A34B3F; font-weight: 600; }
+.prioridad-media { color: #9B6B37; font-weight: 600; }
+.prioridad-baja { color: #39746E; font-weight: 600; }
+
+/* Filtros de tareas */
+.admin-panel-box .form-select, .admin-panel-box .form-control { border-color: #C9C4B8; border-radius: 8px; color: var(--petroleo); }
+.admin-panel-box .form-select:focus, .admin-panel-box .form-control:focus { border-color: var(--verde); box-shadow: 0 0 0 0.2rem rgba(57, 116, 110, 0.15); }
+
+/* PANEL DEL EMPLEADO */
+.empleado-page { background-color: var(--crema); min-height: 100vh; }
+
+/* Barra superior */
+.empleado-navbar { background-color: var(--petroleo); min-height: 76px; }
+.empleado-rol { color: var(--arena); font-size: 14px; }
+.empleado-notificacion { color: var(--crema); border: none; font-size: 20px; }
+.empleado-notificacion:hover { color: var(--cobre); }
+
+/* Estilos de la página de empleado */
+.empleado-main { max-width: 1050px; padding-top: 65px; padding-bottom: 65px; }
+.empleado-main h1 { color: var(--petroleo); font-size: clamp(28px, 4vw, 40px); }
+
+/* Tarjeta de tarea actual */
+.tarea-actual { background-color: #FFFDF9; border: 1px solid var(--arena); border-radius: 16px; padding: 35px; box-shadow: 0 6px 20px rgba(23, 63, 67, 0.06); }
+.tarea-actual h2 { color: var(--petroleo); }
+.tarea-actual h2 i { color: var(--verde); }
+.tarea-titulo { color: var(--petroleo); font-size: 26px; font-weight: 700; }
+.tarea-detalles { background-color: var(--crema); border-radius: 10px; padding: 18px; color: var(--texto-secundario); }
+.tarea-detalles i { color: var(--verde); }
+.empleado-btn-tarea { padding: 14px 18px; font-size: 15px; }
+
+/* Comunicación interna */
+.empleado-comunicacion { background-color: var(--arena); border-radius: 14px; padding: 30px; }
+.empleado-comunicacion h2 { color: var(--petroleo); }
+.empleado-comunicacion h2 i { color: var(--verde); }
+.empleado-comunicacion p { color: var(--texto-secundario); line-height: 1.7; }
+
+/* NUEVO MENÚ LATERAL DEL EMPLEADO */
+.empleado-sidebar { background-color: var(--arena); min-height: calc(100vh - 76px); }
+.empleado-sidebar .nav-link { display: block; width: 100%; text-align: left; color: var(--petroleo); border-radius: 9px; padding: 14px 15px; font-weight: 500; transition: background-color 0.2s ease; }
+.empleado-sidebar .nav-link:hover { background-color: rgba(57, 116, 110, 0.12); color: var(--petroleo); }
+.empleado-sidebar .nav-link.active, .empleado-sidebar .nav-link.active:hover { background-color: var(--petroleo); color: var(--crema); }
+.empleado-sidebar .nav-link:focus-visible, .empleado-enlace-mensajes:focus-visible { outline: 3px solid var(--verde); outline-offset: 2px; }
+.empleado-enlace-mensajes { display: block; padding: 13px 15px; border-radius: 9px; text-decoration: none; font-weight: 500; color: var(--petroleo); }
+.empleado-enlace-mensajes:hover { background-color: rgba(57, 116, 110, 0.12); color: var(--petroleo); }
+
+/* CONTENIDO DEL PANEL DEL EMPLEADO */
+.empleado-panel-main { min-height: calc(100vh - 76px); padding: 45px; }
+.empleado-panel-main h1 { color: var(--petroleo); }
+.empleado-caja { background-color: #FFFDF9; border: 1px solid var(--arena); border-radius: 16px; padding: 30px; }
+
+/* Mi perfil */
+.empleado-perfil-avatar { display: flex; align-items: center; justify-content: center; width: 65px; height: 65px; flex-shrink: 0; border-radius: 50%; background-color: #DCEBE7; color: var(--verde); font-size: 32px; }
+.empleado-dato-etiqueta { color: var(--texto-secundario); font-size: 13px; margin-bottom: 5px; }
+.empleado-dato-valor { color: var(--petroleo); font-weight: 600; margin-bottom: 0; overflow-wrap: anywhere; }
+
+/* Tareas pendientes y finalizadas */
+.empleado-estado-vacio { min-height: 280px; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; }
+.empleado-estado-vacio > i { color: var(--verde); font-size: 45px; }
+.empleado-estado-vacio h2 { color: var(--petroleo); }
+
+/* MENSAJERÍA - ESTILOS GENERALES */
+.mensajes-page { background-color: var(--crema); min-height: 100vh; }
+.mensajes-navbar { background-color: var(--petroleo); min-height: 76px; }
+.mensajes-main { padding-top: 40px; padding-bottom: 40px; }
+.mensajes-main h1 { color: var(--petroleo); }
+.mensajes-contenedor { background-color: #FFFDF9; border: 1px solid var(--arena); border-radius: 16px; overflow: hidden; min-height: 610px; }
+.mensajes-sidebar { background-color: var(--arena); border-right: 1px solid #D3C6B4; }
+.mensajes-sidebar h2 { color: var(--petroleo); }
+.mensajes-seccion { color: var(--texto-secundario); font-size: 11px; font-weight: 700; letter-spacing: 1.5px; }
+.mensajes-sidebar .input-group-text { background-color: #FFFDF9; border-color: #C9C4B8; color: var(--verde); }
+.mensajes-sidebar .form-control { border-color: #C9C4B8; }
+
+/* Conversaciones */
+.conversacion-item { display: flex; align-items: center; gap: 12px; padding: 13px; border-radius: 10px; text-decoration: none; color: var(--petroleo); transition: background-color 0.2s; }
+.conversacion-item:hover { background-color: #D8CBB8; color: var(--petroleo); }
+.conversacion-item.seleccionado { background-color: var(--petroleo); color: var(--crema); }
+.conversacion-item strong { display: block; font-size: 14px; }
+.conversacion-item small { display: block; font-size: 12px; opacity: 0.75; }
+.conversacion-icono, .conversacion-avatar { width: 42px; height: 42px; flex-shrink: 0; border-radius: 10px; background-color: #DCEBE7; color: var(--verde); display: flex; align-items: center; justify-content: center; font-size: 18px; }
+.conversacion-avatar { border-radius: 50%; font-size: 12px; font-weight: 700; }
+.conversacion-item.seleccionado .conversacion-icono { background-color: var(--verde); color: var(--crema); }
+
+/* Ventana de chat */
+.mensajes-chat { display: flex; flex-direction: column; min-height: 610px; background-color: #FFFDF9; }
+.chat-cabecera { display: flex; align-items: center; justify-content: space-between; gap: 15px; padding: 20px 25px; border-bottom: 1px solid var(--arena); }
+.chat-cabecera h2 { color: var(--petroleo); }
+.chat-icono { display: flex; align-items: center; justify-content: center; width: 45px; height: 45px; border-radius: 10px; background-color: #DCEBE7; color: var(--verde); font-size: 22px; }
+.chat-tipo { background-color: var(--arena); color: var(--petroleo); padding: 8px 12px; }
+.chat-mensajes { display: flex; flex-direction: column; gap: 18px; flex: 1; padding: 30px; background-color: #F9F6F0; }
+.chat-fecha { align-self: center; background-color: var(--arena); color: var(--texto-secundario); padding: 6px 16px; border-radius: 20px; font-size: 12px; margin-bottom: 8px; }
+.mensaje-recibido { align-self: flex-start; max-width: 75%; padding: 14px 18px; background-color: #FFFFFF; border: 1px solid var(--arena); border-radius: 14px 14px 14px 4px; color: var(--petroleo); font-size: 14px; }
+.mensaje-autor { display: block; color: var(--verde); font-weight: 700; font-size: 12px; margin-bottom: 7px; }
+.mensaje-enviado { align-self: flex-end; max-width: 75%; padding: 14px 18px; background-color: #DCEBE7; border-radius: 14px 14px 4px 14px; color: var(--petroleo); font-size: 14px; }
+.mensaje-hora { display: block; color: var(--texto-secundario); font-size: 11px; text-align: right; margin-top: 5px; }
+.chat-escribir { background-color: #FFFDF9; border-top: 1px solid var(--arena); padding: 20px 25px; }
+.chat-escribir .form-control { padding: 13px 15px; border-color: #C9C4B8; border-radius: 9px; }
+.chat-escribir .form-control:focus { border-color: var(--verde); box-shadow: 0 0 0 0.2rem rgba(57, 116, 110, 0.15); }
+.chat-btn-enviar { min-width: 48px; height: 48px; font-size: 18px; }
+
+/* CHAT PRIVADO EMPLEADO - ADMIN */
+.chat-titulo-pagina { color: var(--petroleo); }
+.chat-privado { max-width: 950px; margin: 0 auto; background-color: #FFFDF9; border: 1px solid var(--arena); border-radius: 16px; overflow: hidden; }
+.chat-privado-cabecera { display: flex; align-items: center; gap: 15px; padding: 20px 25px; background-color: #FFFDF9; border-bottom: 1px solid var(--arena); }
+.chat-privado-cabecera h2 { color: var(--petroleo); }
+.chat-avatar { width: 48px; height: 48px; flex-shrink: 0; border-radius: 50%; background-color: #DCEBE7; color: var(--verde); display: flex; align-items: center; justify-content: center; font-size: 24px; }
+.chat-privado-mensajes { min-height: 430px; padding: 25px; background-color: #F9F6F0; display: flex; flex-direction: column; gap: 15px; overflow-y: auto; }
+.chat-sin-mensajes { margin: auto; max-width: 350px; text-align: center; color: var(--texto-secundario); }
+.chat-sin-mensajes i { font-size: 45px; color: var(--verde); }
+.chat-sin-mensajes h3 { color: var(--petroleo); }
+.chat-privado-pie { padding: 20px; background-color: #FFFDF9; border-top: 1px solid var(--arena); }
+.chat-privado-pie .form-control { padding: 13px; border: 1px solid #C9C4B8; border-radius: 9px; }
+.chat-privado-pie .form-control:focus { border-color: var(--verde); box-shadow: 0 0 0 0.2rem rgba(57, 116, 110, 0.15); }
+.chat-boton-enviar { min-width: 50px; height: 50px; font-size: 19px; }
+
+/* CHAT DEL ADMINISTRADOR */
+.chat-admin-contenedor { background-color: #FFFDF9; border: 1px solid var(--arena); border-radius: 16px; overflow: hidden; }
+.chat-admin-sidebar { background-color: var(--arena); border-right: 1px solid #D3C6B4; }
+.chat-admin-sidebar h2 { color: var(--petroleo); }
+.chat-admin-sidebar .input-group-text { background-color: #FFFDF9; border-color: #C9C4B8; color: var(--verde); }
+.chat-admin-sidebar .form-control { border-color: #C9C4B8; }
+.chat-admin-sidebar #listaConversaciones { color: var(--texto-secundario); }
+.chat-admin-conversacion { display: flex; flex-direction: column; min-height: 610px; }
+.chat-admin-conversacion .chat-privado-mensajes { flex: 1; }
+
+/* Burbujas para mensajes reales */
+.chat-burbuja-recibida { align-self: flex-start; max-width: 75%; padding: 14px 18px; border-radius: 14px 14px 14px 4px; background-color: #FFFDF9; border: 1px solid var(--arena); color: var(--petroleo); }
+.chat-burbuja-enviada { align-self: flex-end; max-width: 75%; padding: 14px 18px; border-radius: 14px 14px 4px 14px; background-color: #DCEBE7; color: var(--petroleo); }
+
+/* DISEÑO RESPONSIVE */
+
+@media (max-width: 991px) {
+    .admin-sidebar { min-height: auto; }
+    .admin-main { min-height: auto; }
+}
+
+@media (max-width: 768px) {
+    .hero { padding: 70px 0; }
+    .hero-description { font-size: 16px; }
+    .feature-card { padding: 25px; }
+    .tarea-resumen { padding: 20px; }
+    .tarea-resumen h2 { font-size: 26px; }
+    .empleado-main { padding-top: 40px; padding-bottom: 40px; }
+    .tarea-actual { padding: 25px 20px; }
+    .tarea-titulo { font-size: 22px; }
+    .empleado-comunicacion { padding: 25px 20px; }
+    .empleado-comunicacion .btn-verde { width: 100%; }
+}
+
+@media (max-width: 767px) {
+    .empleado-sidebar { min-height: auto; }
+    .empleado-panel-main { min-height: auto; padding: 30px 20px; }
+    .empleado-caja { padding: 22px; }
+    .mensajes-sidebar, .chat-admin-sidebar { border-right: none; border-bottom: 1px solid #D3C6B4; }
+    .mensajes-chat { min-height: 480px; }
+    .chat-cabecera, .chat-escribir { padding: 16px; }
+    .chat-mensajes { padding: 18px; }
+    .mensaje-recibido, .mensaje-enviado, .chat-burbuja-recibida, .chat-burbuja-enviada { max-width: 90%; }
+    .chat-privado-cabecera { padding: 15px; }
+    .chat-privado-mensajes { min-height: 350px; padding: 15px; }
+    .chat-privado-pie { padding: 12px; }
+}
+
+@media (max-width: 576px) {
+    .login-content { min-height: auto; padding-top: 60px; }
+}
+
+/* CHAT FLOTANTE EMPLEADO - ADMINISTRADOR */
+
+/* Icono de conversación inferior derecho */
+.chat-flotante-boton { position: fixed; right: 24px; bottom: 24px; z-index: 1040; width: 60px; height: 60px; display: flex; align-items: center; justify-content: center; border: none; border-radius: 50%; background-color: var(--petroleo); color: #FFFFFF; font-size: 28px; cursor: pointer; box-shadow: 0 6px 22px rgba(23, 63, 67, 0.28); transition: background-color 0.2s ease, transform 0.2s ease; }
+.chat-flotante-boton:hover { background-color: var(--verde); transform: translateY(-2px); }
+.chat-flotante-boton:focus-visible, .chat-flotante-cerrar:focus-visible { outline: 3px solid var(--cobre); outline-offset: 3px; }
+
+/* Ocultar el icono cuando se abre el chat */
+.chat-flotante-boton.chat-abierto { display: none; }
+
+/* VENTANA DE CHAT */
+.chat-flotante-ventana { position: fixed; right: 24px; bottom: 24px; z-index: 1040; width: 370px; height: 490px; max-height: calc(100dvh - 48px); display: flex; flex-direction: column; background-color: #FFFDF9; border: 1px solid var(--arena); border-radius: 16px; overflow: hidden; box-shadow: 0 12px 36px rgba(23, 63, 67, 0.22); }
+
+/* El chat empieza oculto */
+.chat-flotante-ventana[hidden] { display: none; }
+
+/* CABECERA DEL CHAT */
+.chat-flotante-cabecera { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 16px; background-color: var(--petroleo); color: var(--crema); }
+.chat-flotante-avatar { display: flex; align-items: center; justify-content: center; width: 42px; height: 42px; border-radius: 50%; background-color: var(--verde); color: var(--crema); font-size: 21px; }
+.chat-flotante-titulo { margin: 0; color: var(--crema); font-size: 16px; font-weight: 700; }
+.chat-flotante-subtitulo { margin: 2px 0 0; color: var(--arena); font-size: 12px; }
+.chat-flotante-cerrar { padding: 5px; background-color: transparent; border: none; color: #FFFFFF; font-size: 19px; cursor: pointer; }
+
+/* ÁREA DE MENSAJES */
+.chat-flotante-mensajes { flex: 1; min-height: 0; display: flex; flex-direction: column; gap: 12px; padding: 18px; background-color: #F9F6F0; overflow-y: auto; }
+
+/* Mensaje cuando no hay conversación */
+.chat-flotante-vacio { margin: auto; max-width: 260px; text-align: center; color: var(--texto-secundario); }
+.chat-flotante-vacio > i { font-size: 39px; color: var(--verde); }
+.chat-flotante-vacio .fw-bold { color: var(--petroleo); }
+
+/* BURBUJAS DE MENSAJES */
+
+/* Estilos preparados para los mensajes reales */
+.chat-flotante-recibido, .chat-flotante-enviado { max-width: 85%; padding: 11px 14px; font-size: 14px; overflow-wrap: anywhere; }
+.chat-flotante-recibido { align-self: flex-start; border: 1px solid var(--arena); border-radius: 12px 12px 12px 3px; background-color: #FFFFFF; color: var(--petroleo); }
+.chat-flotante-enviado { align-self: flex-end; border-radius: 12px 12px 3px 12px; background-color: #DCEBE7; color: var(--petroleo); }
+
+/* ZONA PARA ESCRIBIR */
+.chat-flotante-pie { padding: 13px; border-top: 1px solid var(--arena); background-color: #FFFDF9; }
+.chat-flotante-pie .form-control { min-width: 0; padding: 11px; border: 1px solid #C9C4B8; border-radius: 8px; font-size: 14px; }
+.chat-flotante-pie .form-control:focus { border-color: var(--verde); box-shadow: 0 0 0 0.2rem rgba(57, 116, 110, 0.15); }
+.chat-flotante-enviar { display: flex; align-items: center; justify-content: center; width: 44px; height: 44px; flex-shrink: 0; padding: 0; font-size: 18px; }
+.chat-flotante-aviso { margin: 8px 0 0; color: var(--texto-secundario); font-size: 11px; text-align: center; }
+
+/* CHAT EN PANTALLAS PEQUEÑAS */
+
+@media (max-width: 576px) {
+    .chat-flotante-boton { right: 15px; bottom: 15px; width: 56px; height: 56px; }
+    .chat-flotante-ventana { right: 10px; bottom: 10px; width: calc(100vw - 20px); height: min(490px, calc(100dvh - 20px)); max-height: none; }
+}
+
+/* NUEVO LOGIN Y REGISTRO - VESTAMANIA */
+
+/* Página general */
+.acceso-page { min-height: 100vh; margin: 0; background-color: #F5F0E7; color: #173F43; }
+
+/* Barra superior */
+.acceso-navbar { padding: 17px 0; background-color: #173F43; }
+.acceso-marca { display: inline-flex; align-items: center; gap: 10px; text-decoration: none; color: #FFFFFF; font-size: 20px; font-weight: 800; letter-spacing: 1px; }
+.acceso-marca:hover { color: #E8DDCA; }
+.acceso-marca-icono { display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; border-radius: 10px; background-color: #39746E; font-size: 21px; }
+.acceso-volver { color: #E8DDCA; text-decoration: none; font-size: 14px; font-weight: 500; }
+.acceso-volver:hover { color: #FFFFFF; }
+
+/* Contenedor principal */
+.acceso-main { padding: 65px 0; }
+.acceso-marco { max-width: 1050px; margin: 0 auto; overflow: hidden; border: 1px solid #E8DDCA; border-radius: 20px; background-color: #FFFDF9; box-shadow: 0 18px 55px rgba(23, 63, 67, 0.10); }
+
+/* ZONA IZQUIERDA */
+.acceso-presentacion { display: flex; flex-direction: column; justify-content: space-between; gap: 35px; padding: 50px 42px; background-color: #173F43; color: #FFFFFF; }
+.acceso-presentacion-icono { display: flex; align-items: center; justify-content: center; width: 65px; height: 65px; border-radius: 16px; background-color: #39746E; color: #FFFFFF; font-size: 30px; }
+.acceso-etiqueta { color: #B8D1C9; font-size: 11px; font-weight: 800; letter-spacing: 1.5px; }
+.acceso-titulo { font-size: clamp(30px, 3vw, 42px); line-height: 1.18; font-weight: 800; color: #FFFFFF; }
+.acceso-descripcion { max-width: 380px; color: #E8DDCA; font-size: 15px; line-height: 1.8; }
+.acceso-ventajas { display: grid; gap: 21px; }
+.acceso-ventaja { display: flex; align-items: flex-start; gap: 13px; color: #F5F0E7; font-size: 14px; line-height: 1.6; }
+.acceso-ventaja i { color: #AAC9BC; font-size: 22px; flex-shrink: 0; }
+.acceso-presentacion-pie { margin: 0; color: #B8D1C9; font-size: 12px; }
+
+/* ZONA DERECHA */
+.acceso-formulario { padding: 45px 50px; background-color: #FFFDF9; }
+.acceso-superior { color: #39746E; font-size: 11px; font-weight: 800; letter-spacing: 1.2px; }
+.acceso-form-titulo { color: #173F43; font-size: clamp(25px, 3vw, 31px); font-weight: 800; }
+.acceso-form-subtitulo { color: #566B65; font-size: 14px; line-height: 1.7; }
+
+/* PESTAÑAS */
+.acceso-tabs { display: flex; gap: 5px; padding: 5px; border-radius: 11px; background-color: #E8DDCA; }
+.acceso-tabs .nav-link { padding: 13px 8px; border-radius: 8px; background-color: transparent; color: #173F43; font-size: 14px; font-weight: 700; transition: background-color 0.2s ease, color 0.2s ease; }
+.acceso-tabs .nav-link:hover { background-color: rgba(57, 116, 110, 0.12); color: #173F43; }
+.acceso-tabs .nav-link.active, .acceso-tabs .nav-link.active:hover { background-color: #173F43; color: #FFFFFF; }
+
+/* CAMPOS DE LOS FORMULARIOS */
+.acceso-label { margin-bottom: 8px; color: #173F43; font-size: 13px; font-weight: 700; }
+.acceso-formulario .form-control, .acceso-formulario .form-select { min-height: 47px; padding: 11px 14px; border: 1px solid #D1CEC5; border-radius: 9px; background-color: #FFFFFF; color: #173F43; font-size: 14px; }
+.acceso-formulario .form-control::placeholder { color: #87958E; }
+.acceso-formulario .form-control:focus, .acceso-formulario .form-select:focus { border-color: #39746E; box-shadow: 0 0 0 3px rgba(57, 116, 110, 0.13); }
+
+/* Campo de correo con icono */
+.acceso-input-icono { position: relative; }
+.acceso-input-icono > i { position: absolute; top: 50%; left: 14px; transform: translateY(-50%); color: #75958A; font-size: 17px; pointer-events: none; }
+.acceso-input-icono .form-control { padding-left: 43px; }
+
+/* Campo de contraseña */
+.acceso-formulario .acceso-password .form-control { border-top-right-radius: 0; border-bottom-right-radius: 0; }
+.acceso-ver-password { padding: 0 15px; border: 1px solid #D1CEC5; border-left: none; border-radius: 0 9px 9px 0; background-color: #FFFFFF; color: #39746E; }
+.acceso-ver-password:hover { background-color: #F5F0E7; border-color: #D1CEC5; color: #173F43; }
+.acceso-campo-ayuda { margin: 7px 0 0; color: #566B65; font-size: 12px; }
+
+/* BOTONES */
+.acceso-btn-entrar { padding: 13px 18px; border: 1px solid #173F43; border-radius: 9px; background-color: #173F43; color: #FFFFFF; font-size: 15px; font-weight: 700; transition: background-color 0.2s ease; }
+.acceso-btn-entrar:hover { background-color: #39746E; border-color: #39746E; color: #FFFFFF; }
+.acceso-btn-registro { padding: 13px 18px; border: 1px solid #75958A; border-radius: 9px; background-color: #75958A; color: #173F43; font-size: 15px; font-weight: 700; transition: background-color 0.2s ease; }
+.acceso-btn-registro:hover { background-color: #5F7E74; border-color: #5F7E74; color: #FFFFFF; }
+
+/* AVISOS */
+.acceso-informacion { display: flex; align-items: flex-start; gap: 12px; padding: 15px; border: 1px solid #DCE9DF; border-radius: 10px; background-color: #F0F6F1; }
+.acceso-informacion i { color: #39746E; font-size: 21px; flex-shrink: 0; }
+.acceso-informacion p { color: #566B65; font-size: 12px; line-height: 1.7; }
+
+/* DISEÑO RESPONSIVE */
+
+@media (max-width: 991.98px) {
+    .acceso-main { padding: 35px 0; }
+    .acceso-presentacion { padding: 27px 30px; gap: 15px; }
+    .acceso-presentacion-icono, .acceso-ventajas, .acceso-presentacion-pie { display: none; }
+    .acceso-titulo { font-size: 27px; }
+    .acceso-descripcion { max-width: none; margin-bottom: 0; }
+    .acceso-formulario { padding: 35px 30px; }
+}
+
+@media (max-width: 576px) {
+    .acceso-main { padding: 20px 10px; }
+    .acceso-marco { border-radius: 14px; }
+    .acceso-presentacion, .acceso-formulario { padding: 25px 20px; }
+    .acceso-tabs .nav-link { font-size: 12px; padding: 12px 5px; }
+    .acceso-tabs .nav-link i { display: none; }
+    .acceso-volver { font-size: 12px; }
+    .acceso-marca { font-size: 16px; }
+}
+
+/* ===========================================
+   ADMINISTRADOR - PROPUESTA 2
+   Navegación superior y tarjetas grandes
+   =========================================== */
+
+.admin2-body { min-height: 100vh; margin: 0; display: flex; flex-direction: column; background: var(--crema); color: var(--petroleo); }
+.admin2-main { flex: 1; padding: 40px 0 55px; }
+.admin2-etiqueta { color: var(--verde); font-size: 11px; font-weight: 800; letter-spacing: 1.3px; }
+.admin2-texto-secundario { color: var(--texto-secundario); font-size: 14px; line-height: 1.7; }
+
+/* Barra superior y enlaces */
+.admin2-navbar { padding: 13px 0; background-color: var(--petroleo); box-shadow: 0 4px 16px rgba(23, 63, 67, 0.12); }
+.admin2-navbar .admin2-brand { display: inline-flex; align-items: center; gap: 10px; color: #FFFFFF; text-decoration: none; font-size: 19px; font-weight: 800; letter-spacing: .8px; }
+.admin2-navbar .admin2-brand:hover { color: var(--arena); }
+.admin2-logo { display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; border-radius: 10px; background: var(--verde); color: #FFFFFF; font-size: 21px; }
+.admin2-nav { gap: 4px; }
+.admin2-navbar .admin2-nav .nav-link { display: flex; align-items: center; gap: 5px; padding: 11px 12px; border-radius: 8px; color: #D7E5DF; font-size: 13px; font-weight: 600; transition: background-color .2s ease, color .2s ease; }
+.admin2-navbar .admin2-nav .nav-link:hover { background-color: rgba(255,255,255,.10); color: #FFFFFF; }
+.admin2-navbar .admin2-nav .nav-link.active, .admin2-navbar .admin2-nav .nav-link.active:hover { background: var(--verde); color: #FFFFFF; }
+.admin2-usuario { display: flex; align-items: center; gap: 12px; }
+.admin2-usuario-rol { white-space: nowrap; color: var(--arena); font-size: 12px; font-weight: 600; }
+.admin2-btn-salir { padding: 9px 13px; border: 1px solid rgba(255,255,255,.35); border-radius: 8px; color: #FFFFFF; background: transparent; font-size: 13px; font-weight: 600; }
+.admin2-btn-salir:hover { border-color: #75958A; background: #75958A; color: #FFFFFF; }
+.admin2-toggler { padding: 5px 10px; border: 1px solid rgba(255,255,255,.4); border-radius: 8px; color: #FFFFFF; font-size: 22px; }
+.admin2-toggler:focus { box-shadow: 0 0 0 3px rgba(117,149,138,.45); }
+
+/* Bienvenida */
+.admin2-bienvenida { padding: 38px 42px; border: 1px solid var(--arena); border-radius: 18px; background: linear-gradient(110deg, #FFFDF9 0%, #FFFDF9 62%, #E5F0EB 100%); box-shadow: 0 8px 26px rgba(23,63,67,.05); }
+.admin2-titulo { color: var(--petroleo); font-size: clamp(29px, 3vw, 39px); font-weight: 800; line-height: 1.2; }
+.admin2-descripcion { max-width: 690px; color: var(--texto-secundario); font-size: 15px; line-height: 1.8; }
+.admin2-ilustracion { display: grid; grid-template-columns: repeat(2,70px); gap: 12px; padding: 20px; border: 1px solid #D8E6DF; border-radius: 18px; background: rgba(255,255,255,.65); }
+.admin2-ilustracion-icono { display: flex; align-items: center; justify-content: center; width: 70px; height: 70px; border-radius: 14px; background: #DCEBE7; color: var(--verde); font-size: 28px; }
+.admin2-ilustracion-icono:nth-child(2) { background: #F3E8D9; color: var(--cobre); }
+.admin2-ilustracion-icono:nth-child(3) { background: var(--arena); color: var(--petroleo); }
+.admin2-ilustracion-icono:nth-child(4) { background: #D6E4DC; color: var(--verde); }
+
+/* Sección de gestión */
+.admin2-gestion, .admin2-inferior { margin-top: 40px; }
+.admin2-seccion-cabecera { margin-bottom: 25px; }
+.admin2-seccion-titulo { color: var(--petroleo); font-size: clamp(24px, 2.7vw, 30px); font-weight: 800; }
+
+/* Tarjetas */
+.admin2-tarjeta { display: flex; flex-direction: column; align-items: flex-start; width: 100%; height: 100%; min-height: 255px; padding: 27px; border: 1px solid var(--arena); border-radius: 17px; background: #FFFDF9; color: var(--petroleo); text-decoration: none; box-shadow: 0 4px 12px rgba(23,63,67,.03); transition: transform .2s ease, border-color .2s ease, box-shadow .2s ease; }
+.admin2-tarjeta:hover { transform: translateY(-5px); border-color: #75958A; box-shadow: 0 15px 32px rgba(23,63,67,.10); color: var(--petroleo); }
+.admin2-tarjeta:focus-visible, .admin2-atajo:focus-visible, .admin2-navbar .nav-link:focus-visible, .admin2-btn-salir:focus-visible { outline: 3px solid var(--verde); outline-offset: 3px; }
+.admin2-tarjeta-icono { display: flex; align-items: center; justify-content: center; width: 61px; height: 61px; margin-bottom: 23px; border-radius: 14px; font-size: 28px; }
+.admin2-icono-departamentos { background: #DCEBE7; color: var(--verde); }
+.admin2-icono-empleados { background: #F3E8D9; color: var(--cobre); }
+.admin2-icono-tareas { background: var(--arena); color: var(--petroleo); }
+.admin2-icono-mensajes { background: #D6E4DC; color: var(--verde); }
+.admin2-tarjeta-titulo { margin-bottom: 12px; color: var(--petroleo); font-size: 20px; font-weight: 800; }
+.admin2-tarjeta-descripcion { margin-bottom: 23px; color: var(--texto-secundario); font-size: 13px; line-height: 1.7; }
+.admin2-tarjeta-enlace { display: flex; align-items: center; gap: 9px; margin-top: auto; color: var(--verde); font-size: 13px; font-weight: 700; }
+.admin2-tarjeta-enlace i { transition: transform .2s ease; }
+.admin2-tarjeta:hover .admin2-tarjeta-enlace i { transform: translateX(4px); }
+
+/* Actividad reciente y accesos rápidos */
+.admin2-panel { display: flex; flex-direction: column; height: 100%; min-height: 325px; padding: 28px; border: 1px solid var(--arena); border-radius: 17px; background: #FFFDF9; box-shadow: 0 4px 12px rgba(23,63,67,.03); }
+.admin2-panel-cabecera { display: flex; justify-content: space-between; align-items: flex-start; gap: 15px; }
+.admin2-panel-titulo { margin-bottom: 10px; color: var(--petroleo); font-size: 21px; font-weight: 800; }
+.admin2-panel-icono { display: flex; align-items: center; justify-content: center; width: 43px; height: 43px; flex-shrink: 0; border-radius: 11px; background: #DCEBE7; color: var(--verde); font-size: 21px; }
+.admin2-sin-actividad { display: flex; flex-direction: column; align-items: center; justify-content: center; flex: 1; padding: 35px 20px 10px; text-align: center; }
+.admin2-sin-actividad-icono { display: flex; align-items: center; justify-content: center; width: 65px; height: 65px; margin-bottom: 17px; border-radius: 50%; background: var(--crema); color: var(--verde); font-size: 28px; }
+.admin2-sin-actividad h3 { margin-bottom: 10px; color: var(--petroleo); font-size: 17px; font-weight: 700; }
+.admin2-sin-actividad p { max-width: 410px; margin-bottom: 0; color: var(--texto-secundario); font-size: 13px; line-height: 1.7; }
+.admin2-atajos { display: grid; gap: 11px; }
+.admin2-atajo { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 14px 15px; border: 1px solid var(--arena); border-radius: 10px; background: #F9F6F0; color: var(--petroleo); text-decoration: none; font-size: 13px; font-weight: 700; transition: background-color .2s ease, border-color .2s ease; }
+.admin2-atajo span { display: flex; align-items: center; gap: 11px; }
+.admin2-atajo span i { color: var(--verde); font-size: 18px; }
+.admin2-atajo > i { color: #75958A; }
+.admin2-atajo:hover { border-color: #75958A; background: #DCEBE7; color: var(--petroleo); }
+
+/* Pie de página */
+.admin2-footer { padding: 23px 0; background: var(--petroleo); color: var(--arena); font-size: 12px; }
+.admin2-footer .container > div > span:first-child { font-weight: 800; letter-spacing: .7px; }
+
+/* Adaptación a tablets y móviles */
+
+@media (min-width: 992px) and (max-width: 1199.98px) {
+    .admin2-navbar .admin2-brand { font-size: 16px; }
+    .admin2-navbar .admin2-nav .nav-link { padding: 10px 6px; font-size: 11px; gap: 3px; }
+    .admin2-usuario-rol { display: none; }
+    .admin2-tarjeta { min-height: 240px; }
+}
+
+@media (max-width: 991.98px) {
+    .admin2-navbar .navbar-collapse { margin-top: 15px; padding-top: 12px; border-top: 1px solid rgba(255,255,255,.12); }
+    .admin2-nav { gap: 4px; margin-bottom: 15px; }
+    .admin2-navbar .admin2-nav .nav-link { padding: 12px 14px; font-size: 14px; }
+    .admin2-usuario { justify-content: space-between; padding-top: 15px; border-top: 1px solid rgba(255,255,255,.12); }
+    .admin2-bienvenida { padding: 30px; }
+}
+
+@media (max-width: 575.98px) {
+    .admin2-main { padding: 22px 0 35px; }
+    .admin2-bienvenida { padding: 25px 22px; border-radius: 14px; }
+    .admin2-titulo { font-size: 28px; }
+    .admin2-descripcion { font-size: 14px; }
+    .admin2-gestion, .admin2-inferior { margin-top: 30px; }
+    .admin2-tarjeta { min-height: 225px; padding: 23px; }
+    .admin2-panel { min-height: 280px; padding: 23px; }
+}
+
+/* ===========================================
+   VESTAMANIA - CSS COMPLETO Y ACTUALIZADO
+   =========================================== */
+
+/* VARIABLES Y ESTILOS GENERALES */
 
 :root {
     --petroleo: #173F43;
@@ -18,9 +537,9 @@ body {
     color: var(--petroleo);
 }
 
-/* =====================================
+/* ===========================================
    BARRA DE NAVEGACIÓN
-   ===================================== */
+   =========================================== */
 
 .navbar {
     background-color: var(--petroleo) !important;
@@ -53,9 +572,9 @@ body {
     color: var(--cobre) !important;
 }
 
-/* =====================================
+/* ===========================================
    BOTONES PERSONALIZADOS
-   ===================================== */
+   =========================================== */
 
 .btn-vestamania {
     background-color: var(--petroleo);
@@ -72,8 +591,6 @@ body {
     border-color: var(--verde);
     color: var(--crema);
 }
-
-/* Botón Iniciar sesión - Verde salvia */
 
 .navbar .btn-vestamania {
     background-color: #75958A;
@@ -117,9 +634,9 @@ body {
     color: var(--crema);
 }
 
-/* =====================================
+/* ===========================================
    INDEX - PÁGINA PRINCIPAL
-   ===================================== */
+   =========================================== */
 
 .hero {
     background-color: var(--crema);
@@ -147,8 +664,6 @@ body {
     font-size: 18px;
     line-height: 1.7;
 }
-
-/* Tarjetas del inicio */
 
 .feature-card {
     background-color: var(--arena);
@@ -186,9 +701,9 @@ button.feature-card:focus-visible {
     outline-offset: 4px;
 }
 
-/* =====================================
-   LOGIN - INICIO DE SESIÓN
-   ===================================== */
+/* ===========================================
+   LOGIN ORIGINAL
+   =========================================== */
 
 .login-page {
     background-color: var(--crema);
@@ -244,9 +759,9 @@ button.feature-card:focus-visible {
     color: var(--petroleo);
 }
 
-/* =====================================
-   PANEL DEL ADMINISTRADOR
-   ===================================== */
+/* ===========================================
+   ADMINISTRADOR - ESTILOS ORIGINALES
+   =========================================== */
 
 .admin-page {
     background-color: var(--crema);
@@ -271,8 +786,6 @@ button.feature-card:focus-visible {
 .admin-icon-btn:hover {
     color: var(--cobre);
 }
-
-/* Menú lateral del administrador */
 
 .admin-sidebar {
     background-color: var(--arena);
@@ -322,8 +835,6 @@ button.feature-card:focus-visible {
     color: var(--texto-secundario);
 }
 
-/* Tarjetas de estadísticas */
-
 .admin-stat-card {
     background-color: #FFFDF9;
     border: 1px solid var(--arena);
@@ -357,9 +868,9 @@ button.feature-card:focus-visible {
     padding: 30px;
 }
 
-/* =====================================
-   GESTIÓN DE DEPARTAMENTOS
-   ===================================== */
+/* ===========================================
+   DEPARTAMENTOS
+   =========================================== */
 
 .tabla-vestamania {
     --bs-table-bg: transparent;
@@ -415,9 +926,9 @@ button.feature-card:focus-visible {
     font-weight: 700;
 }
 
-/* =====================================
-   GESTIÓN DE EMPLEADOS
-   ===================================== */
+/* ===========================================
+   EMPLEADOS
+   =========================================== */
 
 .badge-activo {
     background-color: #DDECE4;
@@ -454,9 +965,9 @@ button.feature-card:focus-visible {
     color: var(--petroleo);
 }
 
-/* =====================================
-   GESTIÓN DE TAREAS
-   ===================================== */
+/* ===========================================
+   TAREAS
+   =========================================== */
 
 .tarea-resumen {
     background-color: #FFFDF9;
@@ -492,8 +1003,6 @@ button.feature-card:focus-visible {
     margin-bottom: 0;
 }
 
-/* Estados de las tareas */
-
 .estado-pendiente {
     background-color: #F4E3D8;
     color: #865137;
@@ -517,8 +1026,6 @@ button.feature-card:focus-visible {
     font-weight: 600;
 }
 
-/* Prioridades */
-
 .prioridad-alta {
     color: #A34B3F;
     font-weight: 600;
@@ -534,8 +1041,6 @@ button.feature-card:focus-visible {
     font-weight: 600;
 }
 
-/* Filtros de tareas */
-
 .admin-panel-box .form-select,
 .admin-panel-box .form-control {
     border-color: #C9C4B8;
@@ -549,16 +1054,14 @@ button.feature-card:focus-visible {
     box-shadow: 0 0 0 0.2rem rgba(57, 116, 110, 0.15);
 }
 
-/* =====================================
+/* ===========================================
    PANEL DEL EMPLEADO
-   ===================================== */
+   =========================================== */
 
 .empleado-page {
     background-color: var(--crema);
     min-height: 100vh;
 }
-
-/* Barra superior */
 
 .empleado-navbar {
     background-color: var(--petroleo);
@@ -580,8 +1083,6 @@ button.feature-card:focus-visible {
     color: var(--cobre);
 }
 
-/* Estilos de la página de empleado */
-
 .empleado-main {
     max-width: 1050px;
     padding-top: 65px;
@@ -592,8 +1093,6 @@ button.feature-card:focus-visible {
     color: var(--petroleo);
     font-size: clamp(28px, 4vw, 40px);
 }
-
-/* Tarjeta de tarea actual */
 
 .tarea-actual {
     background-color: #FFFDF9;
@@ -633,8 +1132,6 @@ button.feature-card:focus-visible {
     font-size: 15px;
 }
 
-/* Comunicación interna */
-
 .empleado-comunicacion {
     background-color: var(--arena);
     border-radius: 14px;
@@ -654,9 +1151,7 @@ button.feature-card:focus-visible {
     line-height: 1.7;
 }
 
-/* =====================================
-   NUEVO MENÚ LATERAL DEL EMPLEADO
-   ===================================== */
+/* Menú lateral original del empleado */
 
 .empleado-sidebar {
     background-color: var(--arena);
@@ -705,10 +1200,6 @@ button.feature-card:focus-visible {
     color: var(--petroleo);
 }
 
-/* =====================================
-   CONTENIDO DEL PANEL DEL EMPLEADO
-   ===================================== */
-
 .empleado-panel-main {
     min-height: calc(100vh - 76px);
     padding: 45px;
@@ -724,8 +1215,6 @@ button.feature-card:focus-visible {
     border-radius: 16px;
     padding: 30px;
 }
-
-/* Mi perfil */
 
 .empleado-perfil-avatar {
     display: flex;
@@ -753,8 +1242,6 @@ button.feature-card:focus-visible {
     overflow-wrap: anywhere;
 }
 
-/* Tareas pendientes y finalizadas */
-
 .empleado-estado-vacio {
     min-height: 280px;
     display: flex;
@@ -773,9 +1260,9 @@ button.feature-card:focus-visible {
     color: var(--petroleo);
 }
 
-/* =====================================
-   MENSAJERÍA - ESTILOS GENERALES
-   ===================================== */
+/* ===========================================
+   MENSAJERÍA
+   =========================================== */
 
 .mensajes-page {
     background-color: var(--crema);
@@ -829,8 +1316,6 @@ button.feature-card:focus-visible {
 .mensajes-sidebar .form-control {
     border-color: #C9C4B8;
 }
-
-/* Conversaciones */
 
 .conversacion-item {
     display: flex;
@@ -888,8 +1373,6 @@ button.feature-card:focus-visible {
     background-color: var(--verde);
     color: var(--crema);
 }
-
-/* Ventana de chat */
 
 .mensajes-chat {
     display: flex;
@@ -1008,9 +1491,9 @@ button.feature-card:focus-visible {
     font-size: 18px;
 }
 
-/* =====================================
+/* ===========================================
    CHAT PRIVADO EMPLEADO - ADMIN
-   ===================================== */
+   =========================================== */
 
 .chat-titulo-pagina {
     color: var(--petroleo);
@@ -1100,9 +1583,9 @@ button.feature-card:focus-visible {
     font-size: 19px;
 }
 
-/* =====================================
+/* ===========================================
    CHAT DEL ADMINISTRADOR
-   ===================================== */
+   =========================================== */
 
 .chat-admin-contenedor {
     background-color: #FFFDF9;
@@ -1144,8 +1627,6 @@ button.feature-card:focus-visible {
     flex: 1;
 }
 
-/* Burbujas para mensajes reales */
-
 .chat-burbuja-recibida {
     align-self: flex-start;
     max-width: 75%;
@@ -1165,12 +1646,11 @@ button.feature-card:focus-visible {
     color: var(--petroleo);
 }
 
-/* =====================================
-   DISEÑO RESPONSIVE
-   ===================================== */
+/* ===========================================
+   RESPONSIVE GENERAL
+   =========================================== */
 
 @media (max-width: 991px) {
-
     .admin-sidebar {
         min-height: auto;
     }
@@ -1181,7 +1661,6 @@ button.feature-card:focus-visible {
 }
 
 @media (max-width: 768px) {
-
     .hero {
         padding: 70px 0;
     }
@@ -1225,7 +1704,6 @@ button.feature-card:focus-visible {
 }
 
 @media (max-width: 767px) {
-
     .empleado-sidebar {
         min-height: auto;
     }
@@ -1280,44 +1758,33 @@ button.feature-card:focus-visible {
 }
 
 @media (max-width: 576px) {
-
     .login-content {
         min-height: auto;
         padding-top: 60px;
     }
 }
 
-
-/* =====================================
-   CHAT FLOTANTE EMPLEADO - ADMINISTRADOR
-   ===================================== */
-
-/* Icono de conversación inferior derecho */
+/* ===========================================
+   CHAT FLOTANTE DEL EMPLEADO
+   =========================================== */
 
 .chat-flotante-boton {
     position: fixed;
     right: 24px;
     bottom: 24px;
     z-index: 1040;
-
     width: 60px;
     height: 60px;
-
     display: flex;
     align-items: center;
     justify-content: center;
-
     border: none;
     border-radius: 50%;
-
     background-color: var(--petroleo);
     color: #FFFFFF;
-
     font-size: 28px;
     cursor: pointer;
-
     box-shadow: 0 6px 22px rgba(23, 63, 67, 0.28);
-
     transition: background-color 0.2s ease,
                 transform 0.2s ease;
 }
@@ -1333,57 +1800,37 @@ button.feature-card:focus-visible {
     outline-offset: 3px;
 }
 
-/* Ocultar el icono cuando se abre el chat */
-
 .chat-flotante-boton.chat-abierto {
     display: none;
 }
 
-/* =====================================
-   VENTANA DE CHAT
-   ===================================== */
-
 .chat-flotante-ventana {
     position: fixed;
-
     right: 24px;
     bottom: 24px;
     z-index: 1040;
-
     width: 370px;
     height: 490px;
     max-height: calc(100dvh - 48px);
-
     display: flex;
     flex-direction: column;
-
     background-color: #FFFDF9;
     border: 1px solid var(--arena);
     border-radius: 16px;
-
     overflow: hidden;
-
     box-shadow: 0 12px 36px rgba(23, 63, 67, 0.22);
 }
-
-/* El chat empieza oculto */
 
 .chat-flotante-ventana[hidden] {
     display: none;
 }
 
-/* =====================================
-   CABECERA DEL CHAT
-   ===================================== */
-
 .chat-flotante-cabecera {
     display: flex;
     align-items: center;
     justify-content: space-between;
-
     gap: 12px;
     padding: 16px;
-
     background-color: var(--petroleo);
     color: var(--crema);
 }
@@ -1392,14 +1839,11 @@ button.feature-card:focus-visible {
     display: flex;
     align-items: center;
     justify-content: center;
-
     width: 42px;
     height: 42px;
-
     border-radius: 50%;
     background-color: var(--verde);
     color: var(--crema);
-
     font-size: 21px;
 }
 
@@ -1425,30 +1869,20 @@ button.feature-card:focus-visible {
     cursor: pointer;
 }
 
-/* =====================================
-   ÁREA DE MENSAJES
-   ===================================== */
-
 .chat-flotante-mensajes {
     flex: 1;
     min-height: 0;
-
     display: flex;
     flex-direction: column;
     gap: 12px;
-
     padding: 18px;
-
     background-color: #F9F6F0;
     overflow-y: auto;
 }
 
-/* Mensaje cuando no hay conversación */
-
 .chat-flotante-vacio {
     margin: auto;
     max-width: 260px;
-
     text-align: center;
     color: var(--texto-secundario);
 }
@@ -1462,12 +1896,6 @@ button.feature-card:focus-visible {
     color: var(--petroleo);
 }
 
-/* =====================================
-   BURBUJAS DE MENSAJES
-   ===================================== */
-
-/* Estilos preparados para los mensajes reales */
-
 .chat-flotante-recibido,
 .chat-flotante-enviado {
     max-width: 85%;
@@ -1478,26 +1906,18 @@ button.feature-card:focus-visible {
 
 .chat-flotante-recibido {
     align-self: flex-start;
-
     border: 1px solid var(--arena);
     border-radius: 12px 12px 12px 3px;
-
     background-color: #FFFFFF;
     color: var(--petroleo);
 }
 
 .chat-flotante-enviado {
     align-self: flex-end;
-
     border-radius: 12px 12px 3px 12px;
-
     background-color: #DCEBE7;
     color: var(--petroleo);
 }
-
-/* =====================================
-   ZONA PARA ESCRIBIR
-   ===================================== */
 
 .chat-flotante-pie {
     padding: 13px;
@@ -1508,10 +1928,8 @@ button.feature-card:focus-visible {
 .chat-flotante-pie .form-control {
     min-width: 0;
     padding: 11px;
-
     border: 1px solid #C9C4B8;
     border-radius: 8px;
-
     font-size: 14px;
 }
 
@@ -1524,33 +1942,24 @@ button.feature-card:focus-visible {
     display: flex;
     align-items: center;
     justify-content: center;
-
     width: 44px;
     height: 44px;
     flex-shrink: 0;
-
     padding: 0;
     font-size: 18px;
 }
 
 .chat-flotante-aviso {
     margin: 8px 0 0;
-
     color: var(--texto-secundario);
     font-size: 11px;
     text-align: center;
 }
 
-/* =====================================
-   CHAT EN PANTALLAS PEQUEÑAS
-   ===================================== */
-
 @media (max-width: 576px) {
-
     .chat-flotante-boton {
         right: 15px;
         bottom: 15px;
-
         width: 56px;
         height: 56px;
     }
@@ -1558,20 +1967,15 @@ button.feature-card:focus-visible {
     .chat-flotante-ventana {
         right: 10px;
         bottom: 10px;
-
         width: calc(100vw - 20px);
         height: min(490px, calc(100dvh - 20px));
         max-height: none;
     }
-
 }
 
-
-/* =====================================
-   NUEVO LOGIN Y REGISTRO - VESTAMANIA
-   ===================================== */
-
-/* Página general */
+/* ===========================================
+   NUEVO LOGIN Y REGISTRO
+   =========================================== */
 
 .acceso-page {
     min-height: 100vh;
@@ -1579,8 +1983,6 @@ button.feature-card:focus-visible {
     background-color: #F5F0E7;
     color: #173F43;
 }
-
-/* Barra superior */
 
 .acceso-navbar {
     padding: 17px 0;
@@ -1591,7 +1993,6 @@ button.feature-card:focus-visible {
     display: inline-flex;
     align-items: center;
     gap: 10px;
-
     text-decoration: none;
     color: #FFFFFF;
     font-size: 20px;
@@ -1607,10 +2008,8 @@ button.feature-card:focus-visible {
     display: flex;
     align-items: center;
     justify-content: center;
-
     width: 40px;
     height: 40px;
-
     border-radius: 10px;
     background-color: #39746E;
     font-size: 21px;
@@ -1627,8 +2026,6 @@ button.feature-card:focus-visible {
     color: #FFFFFF;
 }
 
-/* Contenedor principal */
-
 .acceso-main {
     padding: 65px 0;
 }
@@ -1636,27 +2033,21 @@ button.feature-card:focus-visible {
 .acceso-marco {
     max-width: 1050px;
     margin: 0 auto;
-
     overflow: hidden;
     border: 1px solid #E8DDCA;
     border-radius: 20px;
-
     background-color: #FFFDF9;
     box-shadow: 0 18px 55px rgba(23, 63, 67, 0.10);
 }
 
-/* =====================================
-   ZONA IZQUIERDA
-   ===================================== */
+/* Zona izquierda */
 
 .acceso-presentacion {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     gap: 35px;
-
     padding: 50px 42px;
-
     background-color: #173F43;
     color: #FFFFFF;
 }
@@ -1665,13 +2056,10 @@ button.feature-card:focus-visible {
     display: flex;
     align-items: center;
     justify-content: center;
-
     width: 65px;
     height: 65px;
-
     border-radius: 16px;
     background-color: #39746E;
-
     color: #FFFFFF;
     font-size: 30px;
 }
@@ -1706,7 +2094,6 @@ button.feature-card:focus-visible {
     display: flex;
     align-items: flex-start;
     gap: 13px;
-
     color: #F5F0E7;
     font-size: 14px;
     line-height: 1.6;
@@ -1724,9 +2111,7 @@ button.feature-card:focus-visible {
     font-size: 12px;
 }
 
-/* =====================================
-   ZONA DERECHA
-   ===================================== */
+/* Zona derecha */
 
 .acceso-formulario {
     padding: 45px 50px;
@@ -1752,16 +2137,10 @@ button.feature-card:focus-visible {
     line-height: 1.7;
 }
 
-/* =====================================
-   PESTAÑAS
-   ===================================== */
-
 .acceso-tabs {
     display: flex;
     gap: 5px;
-
     padding: 5px;
-
     border-radius: 11px;
     background-color: #E8DDCA;
 }
@@ -1769,13 +2148,10 @@ button.feature-card:focus-visible {
 .acceso-tabs .nav-link {
     padding: 13px 8px;
     border-radius: 8px;
-
     background-color: transparent;
     color: #173F43;
-
     font-size: 14px;
     font-weight: 700;
-
     transition: background-color 0.2s ease,
                 color 0.2s ease;
 }
@@ -1791,13 +2167,8 @@ button.feature-card:focus-visible {
     color: #FFFFFF;
 }
 
-/* =====================================
-   CAMPOS DE LOS FORMULARIOS
-   ===================================== */
-
 .acceso-label {
     margin-bottom: 8px;
-
     color: #173F43;
     font-size: 13px;
     font-weight: 700;
@@ -1806,12 +2177,9 @@ button.feature-card:focus-visible {
 .acceso-formulario .form-control,
 .acceso-formulario .form-select {
     min-height: 47px;
-
     padding: 11px 14px;
-
     border: 1px solid #D1CEC5;
     border-radius: 9px;
-
     background-color: #FFFFFF;
     color: #173F43;
     font-size: 14px;
@@ -1827,8 +2195,6 @@ button.feature-card:focus-visible {
     box-shadow: 0 0 0 3px rgba(57, 116, 110, 0.13);
 }
 
-/* Campo de correo con icono */
-
 .acceso-input-icono {
     position: relative;
 }
@@ -1837,9 +2203,7 @@ button.feature-card:focus-visible {
     position: absolute;
     top: 50%;
     left: 14px;
-
     transform: translateY(-50%);
-
     color: #75958A;
     font-size: 17px;
     pointer-events: none;
@@ -1849,8 +2213,6 @@ button.feature-card:focus-visible {
     padding-left: 43px;
 }
 
-/* Campo de contraseña */
-
 .acceso-formulario .acceso-password .form-control {
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;
@@ -1858,11 +2220,9 @@ button.feature-card:focus-visible {
 
 .acceso-ver-password {
     padding: 0 15px;
-
     border: 1px solid #D1CEC5;
     border-left: none;
     border-radius: 0 9px 9px 0;
-
     background-color: #FFFFFF;
     color: #39746E;
 }
@@ -1875,27 +2235,18 @@ button.feature-card:focus-visible {
 
 .acceso-campo-ayuda {
     margin: 7px 0 0;
-
     color: #566B65;
     font-size: 12px;
 }
 
-/* =====================================
-   BOTONES
-   ===================================== */
-
 .acceso-btn-entrar {
     padding: 13px 18px;
-
     border: 1px solid #173F43;
     border-radius: 9px;
-
     background-color: #173F43;
     color: #FFFFFF;
-
     font-size: 15px;
     font-weight: 700;
-
     transition: background-color 0.2s ease;
 }
 
@@ -1907,16 +2258,12 @@ button.feature-card:focus-visible {
 
 .acceso-btn-registro {
     padding: 13px 18px;
-
     border: 1px solid #75958A;
     border-radius: 9px;
-
     background-color: #75958A;
     color: #173F43;
-
     font-size: 15px;
     font-weight: 700;
-
     transition: background-color 0.2s ease;
 }
 
@@ -1926,20 +2273,13 @@ button.feature-card:focus-visible {
     color: #FFFFFF;
 }
 
-/* =====================================
-   AVISOS
-   ===================================== */
-
 .acceso-informacion {
     display: flex;
     align-items: flex-start;
     gap: 12px;
-
     padding: 15px;
-
     border: 1px solid #DCE9DF;
     border-radius: 10px;
-
     background-color: #F0F6F1;
 }
 
@@ -1955,12 +2295,7 @@ button.feature-card:focus-visible {
     line-height: 1.7;
 }
 
-/* =====================================
-   DISEÑO RESPONSIVE
-   ===================================== */
-
 @media (max-width: 991.98px) {
-
     .acceso-main {
         padding: 35px 0;
     }
@@ -1988,11 +2323,9 @@ button.feature-card:focus-visible {
     .acceso-formulario {
         padding: 35px 30px;
     }
-
 }
 
 @media (max-width: 576px) {
-
     .acceso-main {
         padding: 20px 10px;
     }
@@ -2022,5 +2355,911 @@ button.feature-card:focus-visible {
     .acceso-marca {
         font-size: 16px;
     }
+}
 
+/* ===========================================
+   ADMINISTRADOR - PROPUESTA 2
+   =========================================== */
+
+.admin2-body {
+    min-height: 100vh;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--crema);
+    color: var(--petroleo);
+}
+
+.admin2-main {
+    flex: 1;
+    padding: 40px 0 55px;
+}
+
+.admin2-etiqueta {
+    color: var(--verde);
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1.3px;
+}
+
+.admin2-texto-secundario {
+    color: var(--texto-secundario);
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+/* Menú horizontal */
+
+.admin2-navbar {
+    padding: 13px 0;
+    background-color: var(--petroleo);
+    box-shadow: 0 4px 16px rgba(23, 63, 67, 0.12);
+}
+
+.admin2-navbar .admin2-brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    color: #FFFFFF;
+    text-decoration: none;
+    font-size: 19px;
+    font-weight: 800;
+    letter-spacing: 0.8px;
+}
+
+.admin2-navbar .admin2-brand:hover {
+    color: var(--arena);
+}
+
+.admin2-logo {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    background-color: var(--verde);
+    color: #FFFFFF;
+    font-size: 21px;
+}
+
+.admin2-nav {
+    gap: 4px;
+}
+
+.admin2-navbar .admin2-nav .nav-link {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 11px 12px;
+    border-radius: 8px;
+    color: #D7E5DF;
+    font-size: 13px;
+    font-weight: 600;
+    transition: background-color 0.2s ease,
+                color 0.2s ease;
+}
+
+.admin2-navbar .admin2-nav .nav-link:hover {
+    background-color: rgba(255, 255, 255, 0.10);
+    color: #FFFFFF;
+}
+
+.admin2-navbar .admin2-nav .nav-link.active,
+.admin2-navbar .admin2-nav .nav-link.active:hover {
+    background-color: var(--verde);
+    color: #FFFFFF;
+}
+
+.admin2-usuario {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.admin2-usuario-rol {
+    white-space: nowrap;
+    color: var(--arena);
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.admin2-btn-salir {
+    padding: 9px 13px;
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    border-radius: 8px;
+    color: #FFFFFF;
+    background-color: transparent;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.admin2-btn-salir:hover {
+    border-color: #75958A;
+    background-color: #75958A;
+    color: #FFFFFF;
+}
+
+.admin2-toggler {
+    padding: 5px 10px;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: 8px;
+    color: #FFFFFF;
+    font-size: 22px;
+}
+
+.admin2-toggler:focus {
+    box-shadow: 0 0 0 3px rgba(117, 149, 138, 0.45);
+}
+
+/* Bienvenida */
+
+.admin2-bienvenida {
+    padding: 38px 42px;
+    border: 1px solid var(--arena);
+    border-radius: 18px;
+    background: linear-gradient(
+        110deg,
+        #FFFDF9 0%,
+        #FFFDF9 62%,
+        #E5F0EB 100%
+    );
+    box-shadow: 0 8px 26px rgba(23, 63, 67, 0.05);
+}
+
+.admin2-titulo {
+    color: var(--petroleo);
+    font-size: clamp(29px, 3vw, 39px);
+    font-weight: 800;
+    line-height: 1.2;
+}
+
+.admin2-descripcion {
+    max-width: 690px;
+    color: var(--texto-secundario);
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+.admin2-ilustracion {
+    display: grid;
+    grid-template-columns: repeat(2, 70px);
+    gap: 12px;
+    padding: 20px;
+    border: 1px solid #D8E6DF;
+    border-radius: 18px;
+    background-color: rgba(255, 255, 255, 0.65);
+}
+
+.admin2-ilustracion-icono {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 70px;
+    height: 70px;
+    border-radius: 14px;
+    background-color: #DCEBE7;
+    color: var(--verde);
+    font-size: 28px;
+}
+
+.admin2-ilustracion-icono:nth-child(2) {
+    background-color: #F3E8D9;
+    color: var(--cobre);
+}
+
+.admin2-ilustracion-icono:nth-child(3) {
+    background-color: var(--arena);
+    color: var(--petroleo);
+}
+
+.admin2-ilustracion-icono:nth-child(4) {
+    background-color: #D6E4DC;
+    color: var(--verde);
+}
+
+/* Tarjetas del administrador */
+
+.admin2-gestion,
+.admin2-inferior {
+    margin-top: 40px;
+}
+
+.admin2-seccion-cabecera {
+    margin-bottom: 25px;
+}
+
+.admin2-seccion-titulo {
+    color: var(--petroleo);
+    font-size: clamp(24px, 2.7vw, 30px);
+    font-weight: 800;
+}
+
+.admin2-tarjeta {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    height: 100%;
+    min-height: 255px;
+    padding: 27px;
+    border: 1px solid var(--arena);
+    border-radius: 17px;
+    background-color: #FFFDF9;
+    color: var(--petroleo);
+    text-decoration: none;
+    box-shadow: 0 4px 12px rgba(23, 63, 67, 0.03);
+    transition: transform 0.2s ease,
+                border-color 0.2s ease,
+                box-shadow 0.2s ease;
+}
+
+.admin2-tarjeta:hover {
+    transform: translateY(-5px);
+    border-color: #75958A;
+    box-shadow: 0 15px 32px rgba(23, 63, 67, 0.10);
+    color: var(--petroleo);
+}
+
+.admin2-tarjeta:focus-visible,
+.admin2-atajo:focus-visible,
+.admin2-navbar .nav-link:focus-visible,
+.admin2-btn-salir:focus-visible {
+    outline: 3px solid var(--verde);
+    outline-offset: 3px;
+}
+
+.admin2-tarjeta-icono {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 61px;
+    height: 61px;
+    margin-bottom: 23px;
+    border-radius: 14px;
+    font-size: 28px;
+}
+
+.admin2-icono-departamentos {
+    background-color: #DCEBE7;
+    color: var(--verde);
+}
+
+.admin2-icono-empleados {
+    background-color: #F3E8D9;
+    color: var(--cobre);
+}
+
+.admin2-icono-tareas {
+    background-color: var(--arena);
+    color: var(--petroleo);
+}
+
+.admin2-icono-mensajes {
+    background-color: #D6E4DC;
+    color: var(--verde);
+}
+
+.admin2-tarjeta-titulo {
+    margin-bottom: 12px;
+    color: var(--petroleo);
+    font-size: 20px;
+    font-weight: 800;
+}
+
+.admin2-tarjeta-descripcion {
+    margin-bottom: 23px;
+    color: var(--texto-secundario);
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+.admin2-tarjeta-enlace {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    margin-top: auto;
+    color: var(--verde);
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.admin2-tarjeta-enlace i {
+    transition: transform 0.2s ease;
+}
+
+.admin2-tarjeta:hover .admin2-tarjeta-enlace i {
+    transform: translateX(4px);
+}
+
+/* Panel inferior */
+
+.admin2-panel {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    min-height: 325px;
+    padding: 28px;
+    border: 1px solid var(--arena);
+    border-radius: 17px;
+    background-color: #FFFDF9;
+    box-shadow: 0 4px 12px rgba(23, 63, 67, 0.03);
+}
+
+.admin2-panel-cabecera {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 15px;
+}
+
+.admin2-panel-titulo {
+    margin-bottom: 10px;
+    color: var(--petroleo);
+    font-size: 21px;
+    font-weight: 800;
+}
+
+.admin2-panel-icono {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 43px;
+    height: 43px;
+    flex-shrink: 0;
+    border-radius: 11px;
+    background-color: #DCEBE7;
+    color: var(--verde);
+    font-size: 21px;
+}
+
+.admin2-sin-actividad {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    padding: 35px 20px 10px;
+    text-align: center;
+}
+
+.admin2-sin-actividad-icono {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 65px;
+    height: 65px;
+    margin-bottom: 17px;
+    border-radius: 50%;
+    background-color: var(--crema);
+    color: var(--verde);
+    font-size: 28px;
+}
+
+.admin2-sin-actividad h3 {
+    margin-bottom: 10px;
+    color: var(--petroleo);
+    font-size: 17px;
+    font-weight: 700;
+}
+
+.admin2-sin-actividad p {
+    max-width: 410px;
+    margin-bottom: 0;
+    color: var(--texto-secundario);
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+.admin2-atajos {
+    display: grid;
+    gap: 11px;
+}
+
+.admin2-atajo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 14px 15px;
+    border: 1px solid var(--arena);
+    border-radius: 10px;
+    background-color: #F9F6F0;
+    color: var(--petroleo);
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 700;
+    transition: background-color 0.2s ease,
+                border-color 0.2s ease;
+}
+
+.admin2-atajo span {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+}
+
+.admin2-atajo span i {
+    color: var(--verde);
+    font-size: 18px;
+}
+
+.admin2-atajo > i {
+    color: #75958A;
+}
+
+.admin2-atajo:hover {
+    border-color: #75958A;
+    background-color: #DCEBE7;
+    color: var(--petroleo);
+}
+
+/* Pie de página */
+
+.admin2-footer {
+    padding: 23px 0;
+    background-color: var(--petroleo);
+    color: var(--arena);
+    font-size: 12px;
+}
+
+.admin2-footer .container > div > span:first-child,
+.admin2-footer .container > span:first-child {
+    font-weight: 800;
+    letter-spacing: 0.7px;
+}
+
+/* Responsive del administrador */
+
+@media (min-width: 992px) and (max-width: 1199.98px) {
+    .admin2-navbar .admin2-brand {
+        font-size: 16px;
+    }
+
+    .admin2-navbar .admin2-nav .nav-link {
+        padding: 10px 6px;
+        font-size: 11px;
+        gap: 3px;
+    }
+
+    .admin2-usuario-rol {
+        display: none;
+    }
+
+    .admin2-tarjeta {
+        min-height: 240px;
+    }
+}
+
+@media (max-width: 991.98px) {
+    .admin2-navbar .navbar-collapse {
+        margin-top: 15px;
+        padding-top: 12px;
+        border-top: 1px solid rgba(255, 255, 255, 0.12);
+    }
+
+    .admin2-nav {
+        gap: 4px;
+        margin-bottom: 15px;
+    }
+
+    .admin2-navbar .admin2-nav .nav-link {
+        padding: 12px 14px;
+        font-size: 14px;
+    }
+
+    .admin2-usuario {
+        justify-content: space-between;
+        padding-top: 15px;
+        border-top: 1px solid rgba(255, 255, 255, 0.12);
+    }
+
+    .admin2-bienvenida {
+        padding: 30px;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .admin2-main {
+        padding: 22px 0 35px;
+    }
+
+    .admin2-bienvenida {
+        padding: 25px 22px;
+        border-radius: 14px;
+    }
+
+    .admin2-titulo {
+        font-size: 28px;
+    }
+
+    .admin2-descripcion {
+        font-size: 14px;
+    }
+
+    .admin2-gestion,
+    .admin2-inferior {
+        margin-top: 30px;
+    }
+
+    .admin2-tarjeta {
+        min-height: 225px;
+        padding: 23px;
+    }
+
+    .admin2-panel {
+        min-height: 280px;
+        padding: 23px;
+    }
+}
+
+/* ===========================================
+   NUEVAS PÁGINAS OPTIMIZADAS DE VESTAMANIA
+   =========================================== */
+
+/* Base compartida */
+
+.admin2-body {
+    overflow-x: clip;
+}
+
+.admin2-body .btn,
+.admin2-body .form-control,
+.admin2-body .form-select {
+    border-radius: 9px;
+}
+
+.admin2-body .btn:enabled,
+.admin2-body .btn.enabled,
+.admin2-body .form-control:enabled,
+.admin2-body .form-select:enabled {
+    cursor: not-allowed;
+}
+
+.admin2-body .btn:focus-visible,
+.admin2-body .form-control:focus-visible,
+.admin2-body .form-select:focus-visible,
+.admin2-body a:focus-visible {
+    outline: 3px solid var(--verde);
+    outline-offset: 3px;
+}
+
+/* Contenido de páginas */
+
+.vm-main {
+    padding-top: 30px;
+    padding-bottom: 65px;
+}
+
+/* Cabecera de página */
+
+.vm-page-hero {
+    padding: 32px 36px;
+    margin-bottom: 28px;
+    border: 1px solid var(--arena);
+    border-radius: 18px;
+
+    background: linear-gradient(
+        110deg,
+        #FFFDF9 0%,
+        #FFFDF9 66%,
+        #E5F0EB 100%
+    );
+
+    box-shadow: 0 7px 24px rgba(23, 63, 67, 0.045);
+}
+
+.vm-page-title {
+    color: var(--petroleo);
+    font-size: clamp(29px, 3vw, 37px);
+    font-weight: 800;
+    line-height: 1.2;
+    letter-spacing: -0.5px;
+}
+
+.vm-hero-copy {
+    max-width: 760px;
+    min-width: 0;
+}
+
+.vm-hero-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 68px;
+    height: 68px;
+    flex-shrink: 0;
+    border-radius: 18px;
+    background-color: #DCEBE7;
+    color: var(--verde);
+    font-size: 30px;
+}
+
+.vm-action {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 45px;
+    white-space: normal;
+}
+
+/* Paneles y tablas */
+
+.vm-panel {
+    padding: 28px;
+    border: 1px solid var(--arena);
+    border-radius: 18px;
+    background-color: #FFFDF9;
+    box-shadow: 0 5px 16px rgba(23, 63, 67, 0.04);
+}
+
+.vm-panel .table-responsive {
+    border-radius: 8px;
+}
+
+.vm-panel .table {
+    min-width: 620px;
+    margin-bottom: 0;
+}
+
+.vm-panel .table th {
+    white-space: nowrap;
+    vertical-align: middle;
+}
+
+.vm-panel .table td {
+    vertical-align: middle;
+    overflow-wrap: anywhere;
+}
+
+.vm-panel .table .btn-accion:enabled {
+    opacity: 0.45;
+    cursor: not-allowed;
+}
+
+.vm-panel .input-group-text {
+    background-color: var(--crema);
+    color: var(--verde);
+}
+
+/* Buscadores y filtros */
+
+.vm-search {
+    width: min(100%, 300px);
+}
+
+.vm-filter {
+    width: min(100%, 205px);
+}
+
+.vm-search-input {
+    width: min(100%, 190px);
+}
+
+.vm-panel .form-control:focus,
+.vm-panel .form-select:focus {
+    border-color: var(--verde);
+    box-shadow: 0 0 0 3px rgba(57, 116, 110, 0.13);
+}
+
+/* Avisos de demostración */
+
+.vm-demo-notice {
+    padding: 13px 15px;
+    border: 1px solid #DCE9DF;
+    border-radius: 10px;
+    background-color: #F0F6F1;
+    color: var(--texto-secundario);
+    font-size: 13px;
+    line-height: 1.65;
+}
+
+.vm-demo-notice a {
+    color: var(--verde);
+    font-weight: 700;
+}
+
+.vm-demo-kicker {
+    color: var(--texto-secundario);
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.vm-empty-inline {
+    padding: 22px 10px;
+}
+
+/* Tarjetas de resumen */
+
+.vm-task-stat {
+    border-radius: 16px;
+    box-shadow: 0 5px 16px rgba(23, 63, 67, 0.045);
+}
+
+/* Mensajería */
+
+.vm-chat-shell {
+    border-radius: 17px;
+    box-shadow: 0 7px 24px rgba(23, 63, 67, 0.06);
+}
+
+.vm-chat-private {
+    max-width: 100%;
+}
+
+.vm-chat-shell .chat-privado-mensajes {
+    min-height: 360px;
+}
+
+.vm-chat-shell .chat-privado-pie .form-control:enabled,
+.vm-chat-shell .form-control:enabled {
+    background-color: #F3F0EA;
+    color: var(--texto-secundario);
+}
+
+.vm-chat-shell .chat-privado-cabecera {
+    flex-wrap: wrap;
+}
+
+/* ===========================================
+   NUEVO PANEL DEL EMPLEADO
+   PESTAÑAS HORIZONTALES
+   =========================================== */
+
+.vm-employee-tabs-wrap {
+    padding: 11px;
+    margin-bottom: 28px;
+    border: 1px solid var(--arena);
+    border-radius: 15px;
+    background-color: #FFFDF9;
+    box-shadow: 0 3px 12px rgba(23, 63, 67, 0.03);
+}
+
+.vm-employee-tabs {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.vm-employee-tabs .nav-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    padding: 13px 17px;
+    border-radius: 9px;
+    color: var(--petroleo);
+    font-size: 14px;
+    font-weight: 700;
+    text-align: center;
+
+    transition: background-color 0.2s ease,
+                color 0.2s ease;
+}
+
+.vm-employee-tabs .nav-link:hover {
+    background-color: #E8F0E9;
+    color: var(--petroleo);
+}
+
+.vm-employee-tabs .nav-link.active,
+.vm-employee-tabs .nav-link.active:hover {
+    background-color: var(--petroleo);
+    color: #FFFFFF;
+}
+
+.vm-employee-tabs .nav-link:focus-visible {
+    outline: 3px solid var(--verde);
+    outline-offset: 3px;
+}
+
+.vm-employee-tab-body .tab-pane {
+    min-height: 310px;
+}
+
+.vm-employee-tab-body .tab-pane > h1 {
+    color: var(--petroleo);
+    font-size: clamp(27px, 3vw, 35px);
+}
+
+.vm-employee-tab-body .empleado-caja,
+.vm-employee-tab-body .tarea-actual {
+    box-shadow: 0 6px 21px rgba(23, 63, 67, 0.045);
+}
+
+.vm-employee-tab-body .empleado-estado-vacio {
+    min-height: 225px;
+}
+
+/* ===========================================
+   MEJORAS RESPONSIVE
+   =========================================== */
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+    .vm-employee-body .admin2-navbar .navbar-collapse {
+        margin-top: 0;
+        padding-top: 0;
+        border-top: 0;
+    }
+}
+
+@media (max-width: 991.98px) {
+    .vm-page-hero {
+        padding: 27px;
+    }
+
+    .vm-panel {
+        padding: 22px;
+    }
+
+    .vm-employee-tabs .nav-link {
+        padding: 12px;
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .vm-main {
+        padding-top: 20px;
+        padding-bottom: 40px;
+    }
+
+    .vm-page-hero {
+        padding: 22px 19px;
+        margin-bottom: 20px;
+    }
+
+    .vm-page-title {
+        font-size: 27px;
+    }
+
+    .vm-panel {
+        padding: 18px 14px;
+    }
+
+    .vm-search,
+    .vm-filter,
+    .vm-search-input {
+        width: 100%;
+        max-width: none;
+    }
+
+    .vm-employee-tabs-wrap {
+        padding: 8px;
+    }
+
+    .vm-employee-tabs {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .vm-employee-tabs .nav-link {
+        min-height: 52px;
+        padding: 11px 8px;
+        font-size: 12px;
+        line-height: 1.35;
+    }
+
+    .vm-employee-tabs .nav-link i {
+        margin-right: 0 !important;
+    }
+
+    .vm-employee-tab-body .tarea-actual,
+    .vm-employee-tab-body .empleado-caja {
+        padding: 22px;
+    }
+
+    .vm-chat-shell .chat-privado-pie {
+        padding: 13px;
+    }
+}
+
+/* Accesibilidad: reducir animaciones si el usuario lo prefiere */
+
+@media (prefers-reduced-motion: reduce) {
+    .admin2-body *,
+    .admin2-body *::before,
+    .admin2-body *::after {
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+    }
 }

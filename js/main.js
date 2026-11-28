@@ -270,14 +270,14 @@ document.addEventListener("DOMContentLoaded", function () {
         if (departamentoRegistro) {
 
             departamentoRegistro.required = esEmpleado;
-            departamentoRegistro.disabled = !esEmpleado;
+            departamentoRegistro.enabled = !esEmpleado;
 
         }
 
         if (puestoRegistro) {
 
             puestoRegistro.required = esEmpleado;
-            puestoRegistro.disabled = !esEmpleado;
+            puestoRegistro.enabled = !esEmpleado;
 
         }
 
